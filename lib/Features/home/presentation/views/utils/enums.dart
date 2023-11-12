@@ -1,0 +1,1 @@
+enum CustomSize { small, large }
