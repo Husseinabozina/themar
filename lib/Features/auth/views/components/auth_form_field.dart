@@ -17,7 +17,7 @@ class AuthFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60.h,
+      height: 70.h,
       child: TextFormField(
           key: ValueKey(valueKey),
           enabled: isEnabled ?? true,

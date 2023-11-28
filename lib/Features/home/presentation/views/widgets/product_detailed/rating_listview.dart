@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/Features/home/presentation/views/product_detailed_page.dart';
+import 'package:themar_app/Features/home/presentation/views/pages/product_detailed_page.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/product_detailed/rating_listile.dart';
 
 class RatingListView extends StatelessWidget {

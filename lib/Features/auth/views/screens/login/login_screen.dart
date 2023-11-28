@@ -27,6 +27,27 @@ class _LoginScreenState extends State<LoginScreen>
   AuthMode _authMode = AuthMode.signIn;
   double minHeight = 0.h;
   double maxHeight = 76.h;
+  String loginText = 'تسجيل الدخول';
+  String signupText = 'التسجيل';
+  String phoneNumValidateText = 'تأكيد رقم الجوال';
+  Widget chekAuthMode(AuthMode authMode) {
+    if (authMode == AuthMode.signIn) {
+      return Text(
+        'تسجيل الدخول',
+        style: AppTheme.Font15Text3BoldStyle(),
+      );
+    } else if (authMode == AuthMode.signUp) {
+      return Text(
+        'التسجيل',
+        style: AppTheme.Font15Text3BoldStyle(),
+      );
+    } else {
+      return Text(
+        'تأكيد رقم الجوال',
+        style: AppTheme.Font15Text3BoldStyle(),
+      );
+    }
+  }
 
   @override
   void initState() {
@@ -87,8 +108,10 @@ class _LoginScreenState extends State<LoginScreen>
                     tag: 'logo',
                     child: SvgPicture.asset(
                       AppImages.logo,
-                      width: 129.83.w,
-                      height: 125.72.h,
+                      height: 0.1584.sh,
+                      width: 0.3461.sw,
+                      // width: 129.83.w,
+                      // height: 125.72.h,
                     ),
                   ),
                   const SizedBox(
@@ -251,7 +274,10 @@ class _LoginScreenState extends State<LoginScreen>
                     height: 8.h,
                   ),
                   CustomButton(
-                    authMode: _authMode,
+                    onPressed: () {
+                      GoRouter.of(context).push(AppRoutes.homeScreen);
+                    },
+                    title: chekAuthMode(_authMode),
                   ),
                   SizedBox(
                     height: 17.h,

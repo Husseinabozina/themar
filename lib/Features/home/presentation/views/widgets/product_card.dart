@@ -26,134 +26,127 @@ class ProductCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(17).r),
           child: Padding(
             padding: const EdgeInsets.all(5).r,
-            child: SizedBox(
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(17)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: REdgeInsets.only(top: 10, right: 10).r,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Stack(
-                            clipBehavior: Clip.none,
-                            children: [
-                              imageCard(),
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 54.w,
-                                  height: 20.h,
-                                  child: DecoratedBox(
-                                    decoration: const BoxDecoration(
-                                        color: AppTheme.colorPrimary,
-                                        borderRadius: BorderRadius.only(
-                                            bottomRight: Radius.circular(11),
-                                            topLeft: Radius.circular(11))),
-                                    child: Text(
-                                      '-45%',
-                                      textAlign: TextAlign.center,
-                                      style: AppTheme.Font14Text3BoldStyle(),
-                                    ),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(17)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: REdgeInsets.only(top: 10.h, right: 10.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            imageCard(),
+                            Positioned(
+                              left: 0,
+                              top: 0,
+                              child: SizedBox(
+                                width: 54.w,
+                                height: 20.h,
+                                child: DecoratedBox(
+                                  decoration: const BoxDecoration(
+                                      color: AppTheme.colorPrimary,
+                                      borderRadius: BorderRadius.only(
+                                          bottomRight: Radius.circular(11),
+                                          topLeft: Radius.circular(11))),
+                                  child: Text(
+                                    '-45%',
+                                    textAlign: TextAlign.center,
+                                    style: AppTheme.Font14Text3BoldStyle(),
                                   ),
                                 ),
-                              )
-                            ],
-                          ),
-                          Text(
-                            product.name,
-                            style: AppTheme.Font16PrimaryBoldStyle(),
-                          ),
-                          Text(
-                            'السعر /1كجم',
-                            style: AppTheme.Font12Text2LightStyle(),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              addButton(),
-                              Row(
-                                children: [
-                                  const FittedBox(
-                                    fit: BoxFit.fill,
-                                    child: Text(
-                                      'ر.س',
-                                      textDirection: TextDirection.rtl,
-                                      style: TextStyle(
-                                          color: AppTheme.colorPrimary,
-                                          decoration:
-                                              TextDecoration.lineThrough,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w300,
-                                          decorationColor:
-                                              AppTheme.colorPrimary),
-                                    ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Text(
+                          product.name,
+                          style: AppTheme.Font16PrimaryBoldStyle(),
+                        ),
+                        Text(
+                          'السعر /1كجم',
+                          style: AppTheme.Font12Text2LightStyle(),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            addButton(),
+                            Row(
+                              children: [
+                                FittedBox(
+                                  fit: BoxFit.fill,
+                                  child: Text(
+                                    'ر.س',
+                                    textDirection: TextDirection.rtl,
+                                    style: TextStyle(
+                                        color: AppTheme.colorPrimary,
+                                        decoration: TextDecoration.lineThrough,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w300,
+                                        decorationColor: AppTheme.colorPrimary),
                                   ),
-                                  FittedBox(
-                                    fit: BoxFit.fill,
-                                    child: Text(
-                                      product!.priceBefore!.toString(),
-                                      textDirection: TextDirection.rtl,
-                                      style: TextStyle(
-                                          color: AppTheme.colorPrimary,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w300,
-                                          decoration:
-                                              TextDecoration.lineThrough,
-                                          decorationColor:
-                                              AppTheme.colorPrimary),
-                                    ),
+                                ),
+                                FittedBox(
+                                  fit: BoxFit.fill,
+                                  child: Text(
+                                    product!.priceBefore!.toString(),
+                                    textDirection: TextDirection.rtl,
+                                    style: TextStyle(
+                                        color: AppTheme.colorPrimary,
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w300,
+                                        decoration: TextDecoration.lineThrough,
+                                        decorationColor: AppTheme.colorPrimary),
                                   ),
-                                  SizedBox(
-                                    width: 5.w,
+                                ),
+                                SizedBox(
+                                  width: 5.w,
+                                ),
+                                FittedBox(
+                                  fit: BoxFit.fill,
+                                  child: Text(
+                                    'ر.س',
+                                    textDirection: TextDirection.rtl,
+                                    style: AppTheme.Font16PrimaryBoldStyle(),
                                   ),
-                                  FittedBox(
-                                    fit: BoxFit.fill,
-                                    child: Text(
-                                      'ر.س',
-                                      textDirection: TextDirection.rtl,
-                                      style: AppTheme.Font16PrimaryBoldStyle(),
-                                    ),
+                                ),
+                                FittedBox(
+                                  fit: BoxFit.fill,
+                                  child: Text(
+                                    product.priceBefore.toString(),
+                                    style: AppTheme.Font16PrimaryBoldStyle(),
                                   ),
-                                  FittedBox(
-                                    fit: BoxFit.fill,
-                                    child: Text(
-                                      product.priceBefore.toString(),
-                                      style: AppTheme.Font16PrimaryBoldStyle(),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
                     ),
+                  ),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  if (aspectRation == 1 / 1.5)
                     SizedBox(
-                      height: 5.h,
-                    ),
-                    if (aspectRation == 1 / 1.5)
-                      SizedBox(
-                        height: 30.h,
-                        width: 115.w,
-                        child: DecoratedBox(
-                            decoration: BoxDecoration(
-                                color: AppTheme.colorPrimary,
-                                borderRadius: BorderRadius.circular(10).r),
-                            child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'أضف للسلة',
-                                  style: AppTheme.Font12Text3BoldStyle(),
-                                ))),
-                      )
-                  ],
-                ),
+                      height: 30.h,
+                      width: 115.w,
+                      child: DecoratedBox(
+                          decoration: BoxDecoration(
+                              color: AppTheme.colorPrimary,
+                              borderRadius: BorderRadius.circular(10).r),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                'أضف للسلة',
+                                style: AppTheme.Font12Text3BoldStyle(),
+                              ))),
+                    )
+                ],
               ),
             ),
           ),
@@ -162,7 +155,7 @@ class ProductCard extends StatelessWidget {
     );
   }
 
-  SizedBox imageCard() {
+  Widget imageCard() {
     return SizedBox(
       height: 117.h,
       width: 145.w,
@@ -174,7 +167,7 @@ class ProductCard extends StatelessWidget {
     );
   }
 
-  SizedBox addButton() {
+  Widget addButton() {
     return SizedBox(
       height: 30.h,
       width: 30.w,

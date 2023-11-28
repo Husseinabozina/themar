@@ -37,35 +37,39 @@ class changeAmountButton extends StatelessWidget {
                     width: isSizeLarge ? 11.65 : 9.09,
                     height: isSizeLarge ? 1.45 : 1.13,
                   )),
-              SizedBox(
+              const SizedBox(
                 width: 3,
               ),
               Text(
                 '5',
                 style: AppTheme.Font15PrimaryMediumStyle(),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 3,
               ),
-              Container(
-                  // alignment: Alignment(0, 10),
-                  constraints: const BoxConstraints(),
-                  padding: const EdgeInsets.all(7).w,
-                  height: isSizeLarge ? 29.h : 23,
-                  width: isSizeLarge ? 29.w : 23,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(7),
-                  ),
-                  child: SvgPicture.asset(
-                    AppImages.add,
-                    height: isSizeLarge ? 11.65 : 9.09,
-                    width: isSizeLarge ? 11.65 : 9.09,
-                  )),
+              changeButtom(isSizeLarge),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Container changeButtom(bool isSizeLarge) {
+    return Container(
+        // alignment: Alignment(0, 10),
+        constraints: const BoxConstraints(),
+        padding: const EdgeInsets.all(7).w,
+        height: isSizeLarge ? 29.h : 23,
+        width: isSizeLarge ? 29.w : 23,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(7),
+        ),
+        child: SvgPicture.asset(
+          AppImages.add,
+          height: isSizeLarge ? 11.65 : 9.09,
+          width: isSizeLarge ? 11.65 : 9.09,
+        ));
   }
 }

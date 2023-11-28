@@ -10,21 +10,33 @@ class CustomNamedAppBar extends StatelessWidget {
   final String name;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 0.5.sw + 0.05.sw,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            name,
-            textDirection: TextDirection.rtl,
-            style: const TextStyle(
-                color: AppTheme.colorPrimary,
-                fontSize: AppTheme.font20,
-                fontWeight: AppTheme.FontWeightBold),
-          ),
-          CustomBackButton()
-        ],
+    return Padding(
+      padding: EdgeInsets.only(
+        top: 50.h,
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              height: 10,
+              width: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 5),
+              child: Text(
+                name,
+                textDirection: TextDirection.rtl,
+                style: const TextStyle(
+                    color: AppTheme.colorPrimary,
+                    fontSize: AppTheme.font20,
+                    fontWeight: AppTheme.FontWeightBold),
+              ),
+            ),
+            CustomBackButton(),
+          ],
+        ),
       ),
     );
   }

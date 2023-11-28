@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/product_card.dart';
 
-class ProductsGridView extends StatelessWidget {
-  const ProductsGridView(
+class ProductCardsGridView extends StatelessWidget {
+  const ProductCardsGridView(
       {super.key, required this.itemCount, required this.aspectRacio});
   final int itemCount;
 

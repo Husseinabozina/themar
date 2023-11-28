@@ -4,8 +4,8 @@ import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductCategoryCard extends StatelessWidget {
-  const ProductCategoryCard({super.key});
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({super.key});
 
   @override
   Widget build(BuildContext context) {

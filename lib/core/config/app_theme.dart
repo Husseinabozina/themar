@@ -30,6 +30,8 @@ class AppTheme {
           {Color color = AppTheme.colorText2}) =>
       mainTextStyle(
           color: color, fontSize: font16, fontWeight: FontWeightLight);
+  static TextStyle? Font16Text3BoldStyle({Color color = AppTheme.colorText3}) =>
+      mainTextStyle(color: color, fontSize: font16, fontWeight: FontWeightBold);
   static TextStyle? Font18primaryBoldStyle(
           {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(color: color, fontSize: font18, fontWeight: FontWeightBold);
@@ -65,6 +67,12 @@ class AppTheme {
         fontSize: font20,
         fontWeight: FontWeightBold,
       );
+  static TextStyle? Font20Text3BoldStyle({Color color = AppTheme.colorText3}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font20,
+        fontWeight: FontWeightBold,
+      );
   static TextStyle? Font12PrimaryLightStyle(
           {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(
@@ -74,6 +82,12 @@ class AppTheme {
       );
   static TextStyle? Font12PrimaryMediumStyle(
           {Color color = AppTheme.colorPrimary}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font12,
+        fontWeight: FontWeightMedium,
+      );
+  static TextStyle? Font12Text1MediumStyle({Color color = colorText1}) =>
       mainTextStyle(
         color: color,
         fontSize: font12,
@@ -126,6 +140,18 @@ class AppTheme {
         color: color,
         fontSize: font12,
         fontWeight: FontWeightLight,
+      );
+  static TextStyle? Font12Text2boldStyle({Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font12,
+        fontWeight: FontWeightBold,
+      );
+  static TextStyle? Font12Text3boldStyle({Color color = AppTheme.colorText3}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font12,
+        fontWeight: FontWeightBold,
       );
   static TextStyle? Font12Text1LightStyle(
           {Color color = AppTheme.colorText1}) =>
@@ -197,6 +223,26 @@ class AppTheme {
         fontSize: font17,
         fontWeight: FontWeightBold,
       );
+  static TextStyle? Font17PrimaryMediumStyle(
+          {Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font17,
+        fontWeight: FontWeightMedium,
+      );
+  static TextStyle? Font17Text2BoldStyle({Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font17,
+        fontWeight: FontWeightBold,
+      );
+  static TextStyle? Font17PrimaryMeduimStyle(
+          {Color color = AppTheme.colorPrimary}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font17,
+        fontWeight: FontWeightMedium,
+      );
 
   static TextStyle? Font18PrimaryBoldStyle(
           {Color color = AppTheme.colorPrimary}) =>
@@ -212,6 +258,13 @@ class AppTheme {
         fontSize: font14,
         fontWeight: FontWeightLight,
       );
+  static TextStyle? Font14Text2NormalStyle(
+          {Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font14,
+        fontWeight: FontWeightnomral,
+      );
   static TextStyle? Font14Text3BoldtStyle(
           {Color color = AppTheme.colorText3}) =>
       mainTextStyle(
@@ -220,6 +273,13 @@ class AppTheme {
         fontWeight: FontWeightBold,
       );
   static TextStyle? Font11Text2BoldStyle({Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font11,
+        fontWeight: FontWeightBold,
+      );
+  static TextStyle? Font11PrimaryBoldStyle(
+          {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(
         color: color,
         fontSize: font11,
@@ -241,6 +301,8 @@ class AppTheme {
   static const Color colorPrimary = Color(0xFF4C8613);
   static const Color colorPrimary2 = Color(0xFF61B80C);
   static const Color colorPrimary3 = Color(0xFF6AA431);
+  static const Color colorButtomNavItem = Color(0xFFAED489);
+
   static const Color colorText1 = Colors.black;
 
   static const Color colorText2 = Color(0xFF808080);
@@ -258,6 +320,7 @@ class AppTheme {
 //FontSize
 
   static const double font23 = 23;
+  static const double font24 = 24;
   static const double font22 = 22;
   static const double font21 = 21;
   static const double font20 = 20;
@@ -274,6 +337,7 @@ class AppTheme {
   static const double font12 = 12;
   static const double font10 = 10;
   static const double font11 = 11;
+  static const double font9 = 9;
 
   // FontWeight
   /// Thin, the least thick
