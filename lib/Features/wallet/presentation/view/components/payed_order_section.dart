@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

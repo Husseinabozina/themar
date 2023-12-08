@@ -12,7 +12,7 @@ class customTextField extends StatelessWidget {
       maxLines: maxlines ?? 1,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFFDCDCDC)),
+            borderSide: const BorderSide(color: Color(0xFFDCDCDC)),
             borderRadius: BorderRadius.circular(10).r),
         hintText: hintText,
         hintStyle: AppTheme.Font12Text2LightStyle(),

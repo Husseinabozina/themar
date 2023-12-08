@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/widgets/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'dart:math';
 
 class CommonQuestionPage extends StatelessWidget {
   const CommonQuestionPage({super.key});
@@ -21,14 +18,14 @@ class CommonQuestionPage extends StatelessWidget {
                 child: const CustomNamedAppBar(name: 'أسئلة متكررة')),
             Space(height: 40.h),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ListView.separated(
                   physics: const NeverScrollableScrollPhysics(),
-                  separatorBuilder: (context, index) => SizedBox(
+                  separatorBuilder: (context, index) => const SizedBox(
                     height: 17,
                   ),
                   shrinkWrap: true,
-                  itemBuilder: (context, index) => QuestionItem(),
+                  itemBuilder: (context, index) => const QuestionItem(),
                   itemCount: 10,
                 ))
           ],
@@ -51,11 +48,11 @@ class _QuestionItemState extends State<QuestionItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(5),
       width: double.infinity,
       decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color(0x05000000),
               blurRadius: 8.50,
@@ -87,7 +84,7 @@ class _QuestionItemState extends State<QuestionItem> {
                               decoration: BoxDecoration(
                                   color: AppTheme.colorPrimarylight,
                                   borderRadius: BorderRadius.circular(5)),
-                              child: Center(
+                              child: const Center(
                                   child: Icon(Icons.keyboard_arrow_down_sharp)),
                             )
                           : Container(
@@ -96,7 +93,7 @@ class _QuestionItemState extends State<QuestionItem> {
                               decoration: BoxDecoration(
                                   color: AppTheme.colorPrimarylight,
                                   borderRadius: BorderRadius.circular(5)),
-                              child: Center(child: Icon(Icons.remove)),
+                              child: const Center(child: Icon(Icons.remove)),
                             )),
                 ),
                 Text(
@@ -106,11 +103,11 @@ class _QuestionItemState extends State<QuestionItem> {
               ],
             ),
             if (_expanded)
-              Divider(
+              const Divider(
                 color: Color(0xFFF1F1F1),
               ),
             if (_expanded)
-              Text(
+              const Text(
                   'fljsdl;fjsadjlfljldsfjlsjdfljsldfjljsdfljslfjldjfldjfljslfdjsldfjlsdfljsjsldjflsdjflsjfljdslj'),
           ],
         ),

@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/addressPage/address_card.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/Features/home/data/models/category_model.dart';
-import 'package:themar_app/Features/home/presentation/views/widgets/category_detailed/category_Item.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/home/categories_listview_section.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/home/home_page_appBar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:themar_app/Features/home/presentation/views/widgets/product_card.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/products_grid_view.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/search_textField.dart';
 import 'package:themar_app/Features/wallet/presentation/view/components/wallet_balance_section.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -115,7 +109,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const Space(height: 29),
                 const AddressCard(),
-                Space(height: 29),
+                const Space(height: 29),
                 const AddressCard(),
                 const Space(height: 29),
                 DottedBorderButton(onTap: () {}, title: 'إضافةعنوان جديد')

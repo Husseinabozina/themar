@@ -10,7 +10,7 @@ class PayCardListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 108.h,
       child: ListView.separated(
         itemCount: 3,
@@ -18,7 +18,7 @@ class PayCardListView extends StatelessWidget {
           width: 12.w,
         ),
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => PayCardItem(
+        itemBuilder: (context, index) => const PayCardItem(
           height: 107,
           width: 242,
         ),
@@ -120,7 +120,7 @@ class PayCardItem extends StatelessWidget {
           ),
           Container(
             padding:
-                EdgeInsets.only(left: 18, top: 17.5, right: 10, bottom: 16).r,
+                const EdgeInsets.only(left: 18, top: 17.5, right: 10, bottom: 16).r,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -144,7 +144,7 @@ class PayCardItem extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(

@@ -17,8 +17,8 @@ class FavoritePage extends StatelessWidget {
             style: AppTheme.Font20PrimaryBoldStyle(),
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 30),
-          ProductCardsGridView(itemCount: 3, aspectRacio: 1.5 / 2)
+          const SizedBox(height: 30),
+          const ProductCardsGridView(itemCount: 3, aspectRacio: 1.5 / 2)
         ],
       ),
     );

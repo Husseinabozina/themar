@@ -13,15 +13,15 @@ class TransactionPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomNamedAppBar(
+            const CustomNamedAppBar(
               name: 'سجل المعاملات',
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             ListView.separated(
-              separatorBuilder: (context, index) => Space(height: 20),
-              physics: NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) => const Space(height: 20),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) => const ChargingItem(),
               itemCount: 4,

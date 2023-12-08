@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/profile_category.dart';
-import 'package:themar_app/Features/Profile/presentation/view/page/profile_page.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +16,7 @@ class QuestionSection extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Container(
         width: double.infinity,
-        decoration: BoxDecoration(boxShadow: [
+        decoration: BoxDecoration(boxShadow: const [
           BoxShadow(
             color: Color(0x05000000),
             blurRadius: 8.50,
@@ -33,14 +32,14 @@ class QuestionSection extends StatelessWidget {
             title: 'أسئلة متكررة',
             imageIcon: AppImages.question,
           ),
-          Divider(
+          const Divider(
             thickness: 0.2,
           ),
-          ProfileCategory(
+          const ProfileCategory(
             title: "سياسة الخصوصية",
             imageIcon: AppImages.check,
           ),
-          Divider(
+          const Divider(
             thickness: 0.2,
           ),
           ProfileCategory(
@@ -50,7 +49,7 @@ class QuestionSection extends StatelessWidget {
             title: "تواصل معنا ",
             imageIcon: AppImages.calling,
           ),
-          Divider(
+          const Divider(
             thickness: 0.2,
           ),
           ProfileCategory(
@@ -60,10 +59,10 @@ class QuestionSection extends StatelessWidget {
             },
             imageIcon: AppImages.edit,
           ),
-          Divider(
+          const Divider(
             thickness: 0.2,
           ),
-          ProfileCategory(
+          const ProfileCategory(
             title: 'مشاركة التطبيق',
             imageIcon: AppImages.share,
           ),

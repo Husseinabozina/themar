@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/orders/presentation/manager/cubit/order_cubit.dart';
-import 'package:themar_app/Features/orders/presentation/views/utils/enums.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/core/config/app_theme.dart';
+import 'package:themar_app/core/utils/enums.dart';
 
 class AnimatedToggleButtom extends StatefulWidget {
-  const AnimatedToggleButtom({super.key});
+  const AnimatedToggleButtom({
+    super.key,
+    this.onTap,
+    required this.leftTitle,
+    required this.rightTitle,
+  });
+  final void Function(int index)? onTap;
+  final String leftTitle;
+  final String rightTitle;
 
   @override
   State<AnimatedToggleButtom> createState() => AnimatedToggleButtomState();
@@ -17,13 +24,14 @@ class AnimatedToggleButtomState extends State<AnimatedToggleButtom> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      height: 55.h,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(color: Color(0xFFF3F3F3))),
-      padding: const EdgeInsets.all(7),
+          borderRadius: BorderRadius.circular(15).r,
+          border: Border.all(color: const Color(0xFFF3F3F3))),
+      padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 7.h),
       width: double.infinity,
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Row(
             children: [
@@ -46,7 +54,7 @@ class AnimatedToggleButtomState extends State<AnimatedToggleButtom> {
                     ordersType = OrderType.current;
                   });
                 },
-                child: Container(
+                child: SizedBox(
                   height: 43.h,
                   width: 158.w,
                 ),
@@ -68,24 +76,24 @@ class AnimatedToggleButtomState extends State<AnimatedToggleButtom> {
           ),
           GestureDetector(
             onTap: () {
-              setState(() {
-                ordersType = OrderType.finished;
-                print(
-                    'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff$ordersType');
-              });
+              if (widget.onTap != null) {
+                widget.onTap!(1);
+              }
+
+              ordersType = OrderType.finished;
             },
             child: Container(
               height: 43.h,
               width: 158.w,
               decoration: BoxDecoration(
-                  color: Colors.transparent,
+                  color: const Color.fromARGB(0, 75, 66, 66),
                   borderRadius: BorderRadius.circular(15)),
               child: Center(
                 child: Center(
                   child: Text(
-                    'المنتهية',
+                    widget.leftTitle,
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 15.sp,
                         color: ordersType == OrderType.finished
                             ? AppTheme.colorText3
                             : AppTheme.colorText2),
@@ -98,11 +106,10 @@ class AnimatedToggleButtomState extends State<AnimatedToggleButtom> {
               right: 0,
               child: GestureDetector(
                 onTap: () {
-                  setState(() {
-                    ordersType = OrderType.current;
-                    print(
-                        'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff$ordersType');
-                  });
+                  if (widget.onTap != null) {
+                    widget.onTap!(0);
+                  }
+                  ordersType = OrderType.current;
                 },
                 child: Container(
                   height: 43.h,
@@ -112,9 +119,9 @@ class AnimatedToggleButtomState extends State<AnimatedToggleButtom> {
                       borderRadius: BorderRadius.circular(15)),
                   child: Center(
                     child: Text(
-                      'الحالية',
+                      widget.rightTitle,
                       style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           color: ordersType == OrderType.finished
                               ? AppTheme.colorText2
                               : AppTheme.colorText3),

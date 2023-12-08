@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/home/data/models/category_model.dart';
-import 'package:themar_app/Features/home/presentation/views/pages/category_detailed_page.dart';
 import 'package:themar_app/core/config/App_routes.dart';
-import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';

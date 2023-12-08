@@ -20,6 +20,7 @@ class NotificationPage extends StatelessWidget {
           ),
           const Space(height: 48),
           ListView.separated(
+              shrinkWrap: true,
               itemBuilder: (context, index) => NotificationTile(
                     notifyTypeMessage: 'تم قبول طلبك وجاري تحضيره الأن',
                     bodyMessage:
@@ -56,6 +57,7 @@ class NotificationTile extends StatelessWidget {
     return Container(
       height: 90.h,
       decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(15),
           boxShadow: const [
             BoxShadow(

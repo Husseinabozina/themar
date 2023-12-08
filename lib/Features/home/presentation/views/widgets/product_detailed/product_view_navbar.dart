@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_button.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductDetailedBottomNav extends StatelessWidget {
@@ -41,7 +39,7 @@ class ProductDetailedBottomNav extends StatelessWidget {
                             'تم أضافة المنتج بنجاح ',
                             style: AppTheme.Font14PrimaryBoldStyle(),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 8,
                           ),
                           Container(
@@ -50,7 +48,7 @@ class ProductDetailedBottomNav extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
                                 color: AppTheme.colorPrimarylight),
-                            child: Icon(
+                            child: const Icon(
                               Icons.done,
                               size: 8,
                             ),
@@ -97,12 +95,13 @@ class ProductDetailedBottomNav extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Container(
+                          SizedBox(
                             height: 65.h,
                             width: 70.w,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(AppImages.tomato))),
+                            child: const DecoratedBox(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(AppImages.tomato)))),
                           ),
                         ],
                       ),
@@ -112,19 +111,32 @@ class ProductDetailedBottomNav extends StatelessWidget {
 
 // ///////////////////////////////////////////////
 
-                      Row(
-                        children: [
-                          bottomNavBottun(moreOffersText),
-                          SizedBox(
-                            width: 18.w,
-                          ),
-                          GestureDetector(
-                              onTap: () {
-                                GoRouter.of(context)
-                                    .push(AppRoutes.bagCardPage);
-                              },
-                              child: bottomNavBottun(addToCardText)),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 18),
+                        child: Row(
+                          children: [
+                            Expanded(
+                                child: BottomNavBottun(
+                                    color: AppTheme.colorText3,
+                                    onPressed: () {},
+                                    title: Text(
+                                      'تصفح العروض',
+                                      style: AppTheme.Font14PrimaryBoldStyle(),
+                                    ))),
+                            Expanded(
+                              child: BottomNavBottun(
+                                  color: AppTheme.colorPrimary,
+                                  onPressed: () {
+                                    GoRouter.of(context)
+                                        .push(AppRoutes.bagCardPage);
+                                  },
+                                  title: Text(
+                                    'تصفح العروض',
+                                    style: AppTheme.Font14Text3BoldStyle(),
+                                  )),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
@@ -137,7 +149,7 @@ class ProductDetailedBottomNav extends StatelessWidget {
         width: double.infinity,
         color: AppTheme.colorPrimary,
         child: Padding(
-          padding: EdgeInsets.only(right: 25, left: 20, top: 10, bottom: 10).r,
+          padding: const EdgeInsets.only(right: 25, left: 20, top: 10, bottom: 10).r,
           child: Row(
             children: [
               Text(
@@ -148,7 +160,7 @@ class ProductDetailedBottomNav extends StatelessWidget {
                 "225",
                 style: AppTheme.Font15Text3BoldStyle(),
               ),
-              Expanded(
+              const Expanded(
                 child: SizedBox(),
               ),
               Text(
@@ -161,12 +173,12 @@ class ProductDetailedBottomNav extends StatelessWidget {
               Container(
                 height: 32.h,
                 width: 35.w,
-                padding: EdgeInsets.all(5),
-                child: Image.asset(AppImages.shoppingCard),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   color: AppTheme.colorPrimary3,
                   borderRadius: BorderRadius.circular(10).r,
                 ),
+                child: Image.asset(AppImages.shoppingCard),
               ),
             ],
           ),
@@ -175,27 +187,39 @@ class ProductDetailedBottomNav extends StatelessWidget {
     );
   }
 
-  SizedBox bottomNavBottun(String title) {
+  // SizedBox bottomNavBottun(String title, void Function() onPressed) {
+  //   return BottomNavBottun(moreOffersText: moreOffersText);
+  // }
+}
+
+class BottomNavBottun extends StatelessWidget {
+  const BottomNavBottun({
+    super.key,
+    required this.color,
+    required this.onPressed,
+    required this.title,
+  });
+
+  final Color color;
+  final Widget title;
+  final void Function() onPressed;
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       height: 50.h,
-      width: 162.65.w,
+      width: double.infinity,
       child: DecoratedBox(
           decoration: BoxDecoration(
-              color: title == moreOffersText
-                  ? AppTheme.colorText3
-                  : AppTheme.colorPrimary,
+              color: color,
+              // //  title == moreOffersText
+              //     ? AppTheme.colorText3
+              //     : AppTheme.colorPrimary,
               border: Border.all(
                 color: AppTheme.colorPrimary,
               ),
               borderRadius: BorderRadius.circular(10)),
-          child: TextButton(
-              onPressed: () {},
-              child: Text(
-                title,
-                style: title == moreOffersText
-                    ? AppTheme.Font14PrimaryNormalStyle()
-                    : AppTheme.Font14Text3BoldStyle(),
-              ))),
+          child: TextButton(onPressed: onPressed, child: title)),
     );
   }
 }

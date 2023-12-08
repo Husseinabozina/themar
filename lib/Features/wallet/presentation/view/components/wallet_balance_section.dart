@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -63,9 +62,9 @@ class DottedBorderButton extends StatelessWidget {
       onTap: onTap,
       child: DottedBorder(
         borderType: BorderType.RRect,
-        radius: Radius.circular(15),
+        radius: const Radius.circular(15),
         color: AppTheme.colorPrimary,
-        dashPattern: [7, 3],
+        dashPattern: const [7, 3],
         child: Container(
           height: 54.h,
           decoration: BoxDecoration(

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
 import 'package:themar_app/Features/wallet/presentation/view/components/payed_order_section.dart';
 import 'package:themar_app/Features/wallet/presentation/view/components/charging_item.dart';
 import 'package:themar_app/Features/wallet/presentation/view/components/wallet_balance_section.dart';
 import 'package:themar_app/core/config/App_routes.dart';
-import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/widgets/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:go_router/go_router.dart';
 
 class WalletPage extends StatelessWidget {
@@ -29,12 +25,12 @@ class WalletPage extends StatelessWidget {
                 const SizedBox(
                   height: 33,
                 ),
-                WalletBalanceSection(),
-                Space(
+                const WalletBalanceSection(),
+                const Space(
                   height: 22,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: GestureDetector(
                     onTap: () {
                       GoRouter.of(context).push(AppRoutes.transactionPage);
@@ -55,8 +51,8 @@ class WalletPage extends StatelessWidget {
                   ),
                 ),
                 ListView.separated(
-                  separatorBuilder: (context, index) => Space(height: 20),
-                  physics: NeverScrollableScrollPhysics(),
+                  separatorBuilder: (context, index) => const Space(height: 20),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (context, index) => const ChargingItem(),
                   itemCount: 3,

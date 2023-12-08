@@ -22,9 +22,9 @@ class ClickableText extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(color: AppTheme.colorText2),
+          style: const TextStyle(color: AppTheme.colorText2),
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         TextButton(

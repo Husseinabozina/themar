@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: null
+  image_picker: ^1.0.4
 
 dev_dependencies:
   dotted_border: ^2.1.0

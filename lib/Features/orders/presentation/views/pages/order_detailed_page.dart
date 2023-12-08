@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:themar_app/Features/Profile/data/order.dart';
 import 'package:themar_app/Features/orders/presentation/views/components/order_card.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
+import 'package:themar_app/core/utils/enums.dart';
 import 'package:themar_app/core/widgets/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/core/widgets/receit_card.dart';
@@ -14,15 +16,22 @@ class OrderDetailedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 40).r,
+        padding: EdgeInsets.only(
+          left: 15.w,
+          right: 15.w,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            CustomNamedAppBar(name: 'تفاصيل الطلب'),
+            const CustomNamedAppBar(name: 'تفاصيل الطلب'),
             SizedBox(
               height: 21.h,
             ),
-            Hero(tag: 'orderCard$index', child: OrderCard()),
+            Hero(
+                tag: 'orderCard$index',
+                child: OrderCard(
+                  order: Order(orderStatus: OrderStatus.done),
+                )),
             SizedBox(
               height: 21.h,
             ),
@@ -36,17 +45,15 @@ class OrderDetailedPage extends StatelessWidget {
             Container(
               height: 85.h,
               width: double.infinity,
-              padding:
-                  const EdgeInsets.only(right: 13, left: 13, top: 8, bottom: 12)
-                      .r
-                      .r,
+              padding: EdgeInsets.only(
+                  right: 13.w, left: 13.w, top: 8.h, bottom: 12.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
                     height: 62.h,
                     width: 72.w,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image:
                             DecorationImage(image: AssetImage(AppImages.map))),
                   ),
@@ -83,7 +90,7 @@ class OrderDetailedPage extends StatelessWidget {
             SizedBox(
               height: 19.h,
             ),
-            ReceiptCard(
+            const ReceiptCard(
               isOrdered: true,
             )
           ],

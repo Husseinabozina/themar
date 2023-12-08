@@ -19,7 +19,7 @@ class changeAmountButton extends StatelessWidget {
             color: AppTheme.colorPrimary.withOpacity(0.1),
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
-          padding: EdgeInsets.all(3).r,
+          padding: const EdgeInsets.all(3).r,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -27,7 +27,7 @@ class changeAmountButton extends StatelessWidget {
                   constraints: const BoxConstraints(),
                   height: 29.h,
                   width: 29.w,
-                  padding: EdgeInsets.all(7).w,
+                  padding: const EdgeInsets.all(7).w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7),
                       color: Colors.white),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
@@ -49,8 +48,8 @@ class SimilarProductCard extends StatelessWidget {
                                 child: SizedBox(
                                   width: 43.w,
                                   height: 16.h,
-                                  child: DecoratedBox(
-                                    decoration: const BoxDecoration(
+                                  child: const DecoratedBox(
+                                    decoration: BoxDecoration(
                                         color: AppTheme.colorPrimary,
                                         borderRadius: BorderRadius.only(
                                             bottomRight: Radius.circular(11),
@@ -70,12 +69,12 @@ class SimilarProductCard extends StatelessWidget {
                           ),
                           Text(
                             product.name,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: AppTheme.FontWeightBold,
                                 fontSize: AppTheme.font13,
                                 color: AppTheme.colorPrimary),
                           ),
-                          Text(
+                          const Text(
                             'السعر /1كجم',
                             style: TextStyle(
                                 fontWeight: AppTheme.FontWeightLight,
@@ -106,9 +105,9 @@ class SimilarProductCard extends StatelessWidget {
                                   FittedBox(
                                     fit: BoxFit.fill,
                                     child: Text(
-                                      product!.priceBefore!.toString(),
+                                      product.priceBefore.toString(),
                                       textDirection: TextDirection.rtl,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           color: AppTheme.colorPrimary,
                                           fontSize: 10,
                                           fontWeight: FontWeight.w300,
@@ -121,7 +120,7 @@ class SimilarProductCard extends StatelessWidget {
                                   SizedBox(
                                     width: 5.w,
                                   ),
-                                  FittedBox(
+                                  const FittedBox(
                                     fit: BoxFit.fill,
                                     child: Text(
                                       'ر.س',
@@ -129,7 +128,7 @@ class SimilarProductCard extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: AppTheme.FontWeightBold,
                                           fontSize: AppTheme.font13,
-                                          color: const Color.fromARGB(
+                                          color: Color.fromARGB(
                                               255, 26, 29, 23)),
                                     ),
                                   ),
@@ -137,10 +136,10 @@ class SimilarProductCard extends StatelessWidget {
                                     fit: BoxFit.fill,
                                     child: Text(
                                       product.priceAfter.toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontWeight: AppTheme.FontWeightBold,
                                           fontSize: AppTheme.font13,
-                                          color: const Color.fromARGB(
+                                          color: Color.fromARGB(
                                               255, 26, 29, 23)),
                                     ),
                                   ),
@@ -186,7 +185,7 @@ class SimilarProductCard extends StatelessWidget {
       child: DecoratedBox(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(11),
-              image: DecorationImage(
+              image: const DecorationImage(
                   fit: BoxFit.fill, image: AssetImage(AppImages.tomato)))),
     );
   }

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class MyToggleButton extends StatefulWidget {
+  const MyToggleButton({super.key});
+
   @override
   _MyToggleButtonState createState() => _MyToggleButtonState();
 }
 
 class _MyToggleButtonState extends State<MyToggleButton>
     with SingleTickerProviderStateMixin {
-  List<bool> _isSelected = [true, false];
+  final List<bool> _isSelected = [true, false];
   late AnimationController _controller;
   late Animation _animation;
 
@@ -44,7 +46,7 @@ class _MyToggleButtonState extends State<MyToggleButton>
             }
           });
         },
-        children: [
+        children: const [
           Icon(Icons.ac_unit),
           Icon(Icons.fireplace),
         ],

@@ -16,8 +16,8 @@ class ProfileCategory extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: EdgeInsets.all(15).r,
-        child: Container(
+        padding: const EdgeInsets.all(15).r,
+        child: SizedBox(
           height: 18.h,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

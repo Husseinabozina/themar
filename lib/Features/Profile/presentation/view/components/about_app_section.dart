@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/profile_category.dart';
-import 'package:themar_app/Features/Profile/presentation/view/page/profile_page.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

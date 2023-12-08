@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +13,7 @@ class CategoryCard extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.grey[100], borderRadius: BorderRadius.circular(17)),
         child: Padding(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           child: SizedBox(
             child: DecoratedBox(
               decoration: BoxDecoration(
@@ -23,7 +22,7 @@ class CategoryCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 10, right: 10),
+                    padding: const EdgeInsets.only(top: 10, right: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -98,7 +97,7 @@ class CategoryCard extends StatelessWidget {
                             Row(
                               children: [
                                 const Text(
-                                  'ر.س' + '56',
+                                  'ر.س' '56',
                                   style: TextStyle(
                                       decoration: TextDecoration.lineThrough,
                                       decorationColor: AppTheme.colorPrimary),

@@ -61,8 +61,8 @@ class PayPage extends StatelessWidget {
               width: 1.sw,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(35).r,
-                          topRight: Radius.circular(35).r)
+                          topLeft: const Radius.circular(35).r,
+                          topRight: const Radius.circular(35).r)
                       .r,
                   color: Colors.white),
               child: Padding(
@@ -88,7 +88,7 @@ class PayPage extends StatelessWidget {
                       Expanded(
                           child: SizedBox(
                               height: 55.h,
-                              child: customTextField(hintText: 'hintText'))),
+                              child: const customTextField(hintText: 'hintText'))),
                       const SizedBox(width: 20),
                       Expanded(
                           child: SizedBox(

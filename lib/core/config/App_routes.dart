@@ -1,21 +1,24 @@
-import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/Suggestions_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/aboutapp_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/address_picker_page.dart';
-import 'package:themar_app/Features/Profile/presentation/view/page/adress_Page.dart';
+import 'package:themar_app/Features/Profile/presentation/view/page/address_Page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/contactUs_page.dart';
+import 'package:themar_app/Features/Profile/presentation/view/page/delivery_personal_info_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/pay_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/personal_information_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/profile_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/question_page.dart';
-import 'package:themar_app/Features/notiffication/presentation/page/notifications_page.dart';
+import 'package:themar_app/Features/home/presentation/views/pages/delivery_order_detailed_page.dart';
+import 'package:themar_app/Features/notification/presentation/page/notifications_page.dart';
+import 'package:themar_app/Features/orders/presentation/views/pages/delivery_orders_page.dart';
+import 'package:themar_app/Features/orders/presentation/views/pages/orders_page.dart';
 import 'package:themar_app/Features/wallet/presentation/view/page/charging_page.dart';
 import 'package:themar_app/Features/wallet/presentation/view/page/wallet_page.dart';
 import 'package:themar_app/Features/auth/views/screens/login/login_screen.dart';
 import 'package:themar_app/Features/cart/presentation/views/pages/finish_odering_page.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
+import 'package:themar_app/Features/cart/presentation/views/pages/cart_page.dart';
 import 'package:themar_app/Features/home/presentation/views/pages/category_detailed_page.dart';
 import 'package:themar_app/Features/home/presentation/views/pages/home_page.dart';
 import 'package:themar_app/Features/home/presentation/views/pages/product_detailed_page.dart';
@@ -47,6 +50,10 @@ class AppRoutes {
   static const addressPickerPage = '/addressPickerPage';
   static const payPage = '/PayPage';
   static const notificationPage = '/NotificationPage';
+  static const ordersPage = '/OrdersPage';
+  static const deliveryOrdersPage = '/DeliveryOrdersPage';
+  static const deliveryOrderDetailedPage = '/DeliveryOrderDetailedPage';
+  static const deliveryPersonalInformation = '/DeliveryPersonalInformaton';
 
   static final router = GoRouter(routes: [
     GoRoute(
@@ -59,7 +66,7 @@ class AppRoutes {
     ),
     GoRoute(
       path: homeScreen,
-      builder: (context, state) => HomeScreen(),
+      builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
       path: homePage,
@@ -125,7 +132,7 @@ class AppRoutes {
     ),
     GoRoute(
       path: adressPage,
-      builder: (context, state) => const AdressPage(),
+      builder: (context, state) => const AddressPage(),
     ),
     GoRoute(
       path: addressPickerPage,
@@ -138,6 +145,23 @@ class AppRoutes {
     GoRoute(
       path: notificationPage,
       builder: (context, state) => const NotificationPage(),
+    ),
+    GoRoute(
+      path: ordersPage,
+      builder: (context, state) => const OrdersPage(),
+    ),
+    GoRoute(
+      path: deliveryOrdersPage,
+      builder: (context, state) => const DeliveryOrdersPage(),
+    ),
+    GoRoute(
+      path: deliveryOrderDetailedPage,
+      builder: (context, state) =>
+          DeliveryOrderDetailedPage(index: state.extra as int),
+    ),
+    GoRoute(
+      path: deliveryPersonalInformation,
+      builder: (context, state) => const DeliverPersonalInfomration(),
     ),
   ]);
 }

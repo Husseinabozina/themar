@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
@@ -15,10 +14,12 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
+      onTap: ()
+       {
         GoRouter.of(context)
             .push(AppRoutes.productDetailedPage, extra: product);
-      },
+      }
+      ,
       child: SizedBox(
         child: DecoratedBox(
           decoration: BoxDecoration(
@@ -93,7 +94,7 @@ class ProductCard extends StatelessWidget {
                                 FittedBox(
                                   fit: BoxFit.fill,
                                   child: Text(
-                                    product!.priceBefore!.toString(),
+                                    product.priceBefore.toString(),
                                     textDirection: TextDirection.rtl,
                                     style: TextStyle(
                                         color: AppTheme.colorPrimary,
@@ -162,7 +163,7 @@ class ProductCard extends StatelessWidget {
       child: DecoratedBox(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(11),
-              image: DecorationImage(
+              image: const DecorationImage(
                   fit: BoxFit.fill, image: AssetImage(AppImages.tomato)))),
     );
   }

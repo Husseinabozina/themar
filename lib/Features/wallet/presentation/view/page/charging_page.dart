@@ -3,7 +3,6 @@ import 'package:themar_app/Features/Profile/presentation/view/components/space.d
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/widgets/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/custom_back_button.dart';
 import 'package:themar_app/core/widgets/custom_button.dart';
 
 class ChargingPage extends StatelessWidget {
@@ -25,21 +24,21 @@ class ChargingPage extends StatelessWidget {
               'معلومات المبلغ',
               style: AppTheme.Font15PrimaryBoldStyle(),
             ),
-            SizedBox(height: 22),
-            FilledCustomTextField(hinTtext: 'المبلغ الخاص بك'),
-            Space(height: 40),
+            const SizedBox(height: 22),
+            const FilledCustomTextField(hinTtext: 'المبلغ الخاص بك'),
+            const Space(height: 40),
             Text(
               'معلومات البطاقة',
               style: AppTheme.Font15PrimaryBoldStyle(),
             ),
             const SizedBox(height: 22),
-            FilledCustomTextField(hinTtext: 'الاسم'),
-            SizedBox(height: 20),
-            FilledCustomTextField(hinTtext: "رقم البطاقة الائتمانية"),
-            SizedBox(
+            const FilledCustomTextField(hinTtext: 'الاسم'),
+            const SizedBox(height: 20),
+            const FilledCustomTextField(hinTtext: "رقم البطاقة الائتمانية"),
+            const SizedBox(
               height: 20,
             ),
-            Row(
+            const Row(
               children: [
                 Expanded(
                     child: FilledCustomTextField(
@@ -52,7 +51,7 @@ class ChargingPage extends StatelessWidget {
                 )),
               ],
             ),
-            Expanded(
+            const Expanded(
               child: SizedBox(),
             ),
             CustomButton(
@@ -81,23 +80,23 @@ class FilledCustomTextField extends StatelessWidget {
       child: TextField(
           textDirection: TextDirection.rtl,
           decoration: InputDecoration(
-            hintStyle: AppTheme.Font15Text2LightStyle(color: Color(0xFFAFAFAF)),
+            hintStyle: AppTheme.Font15Text2LightStyle(color: const Color(0xFFAFAFAF)),
             hintTextDirection: TextDirection.rtl,
-            contentPadding: EdgeInsets.only(top: 30, right: 20),
+            contentPadding: const EdgeInsets.only(top: 30, right: 20),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15).r,
-                borderSide: BorderSide(color: Color(0xFF8AC253), width: 0.5)),
+                borderSide: const BorderSide(color: Color(0xFF8AC253), width: 0.5)),
             disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15).r,
-                borderSide: BorderSide(color: Color(0xFF8AC253), width: 0.5)),
+                borderSide: const BorderSide(color: Color(0xFF8AC253), width: 0.5)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15).r,
-                borderSide: BorderSide()),
+                borderSide: const BorderSide()),
             hintText: hinTtext,
             floatingLabelAlignment: FloatingLabelAlignment.start,
             alignLabelWithHint: true,
             focusColor: AppTheme.colorPrimary,
-            fillColor: Color(0xFFFAFFF5),
+            fillColor: const Color(0xFFFAFFF5),
             filled: true,
           )),
     );

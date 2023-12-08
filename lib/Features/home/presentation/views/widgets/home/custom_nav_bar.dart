@@ -3,14 +3,14 @@ import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomNavigationBar extends StatelessWidget {
-  CustomNavigationBar(
+  const CustomNavigationBar(
       {super.key,
       required this.items,
       required this.currentIndex,
       required this.onTab});
-  List<BottomNavigationBarItem> items;
-  int currentIndex = 0;
-  void Function(int index) onTab;
+  final List<BottomNavigationBarItem> items;
+  final int currentIndex;
+  final void Function(int index) onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CustomNavigationBar extends StatelessWidget {
         items: items,
         type: BottomNavigationBarType.fixed,
         useLegacyColorScheme: false,
-        currentIndex: currentIndex,
+        currentIndex: currentIndex ?? 0,
         backgroundColor: AppTheme.colorPrimary,
         selectedItemColor: AppTheme.colorText3,
         unselectedItemColor: AppTheme.colorText2,

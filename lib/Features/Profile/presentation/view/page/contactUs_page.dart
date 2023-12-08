@@ -52,7 +52,7 @@ class ContactUsPage extends StatelessWidget {
                           color: AppTheme.colorText3,
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        padding: EdgeInsets.all(15).h,
+                        padding: const EdgeInsets.all(15).h,
                         child: Column(
                           children: [
                             Row(
@@ -68,7 +68,7 @@ class ContactUsPage extends StatelessWidget {
                                 SvgPicture.asset(AppImages.locationMap)
                               ],
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -127,12 +127,12 @@ class ContactUsPage extends StatelessWidget {
                   children: [
                     SizedBox(
                       height: 53.h,
-                      child: customTextField(hintText: 'الاسم'),
+                      child: const customTextField(hintText: 'الاسم'),
                     ),
                     const Space(height: 10),
                     SizedBox(
                       height: 53.h,
-                      child: customTextField(hintText: 'الاسم'),
+                      child: const customTextField(hintText: 'الاسم'),
                     ),
                     const Space(height: 10),
                     const customTextField(

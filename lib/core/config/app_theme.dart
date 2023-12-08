@@ -20,6 +20,10 @@ class AppTheme {
   static TextStyle? Font16PrimaryBoldStyle(
           {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(color: color, fontSize: font16, fontWeight: FontWeightBold);
+  static TextStyle? Font16LightBoldStyle(
+          {Color color = AppTheme.colorPrimary}) =>
+      mainTextStyle(
+          color: color, fontSize: font16, fontWeight: FontWeightLight);
   static TextStyle? Font16PrimaryMediumStyle(
           {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(
@@ -223,7 +227,7 @@ class AppTheme {
         fontSize: font17,
         fontWeight: FontWeightBold,
       );
-  static TextStyle? Font17PrimaryMediumStyle(
+  static TextStyle? FontColorText2MediumStyle(
           {Color color = AppTheme.colorText2}) =>
       mainTextStyle(
         color: color,
@@ -231,6 +235,12 @@ class AppTheme {
         fontWeight: FontWeightMedium,
       );
   static TextStyle? Font17Text2BoldStyle({Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+        color: color,
+        fontSize: font17,
+        fontWeight: FontWeightBold,
+      );
+  static TextStyle? Font17Text3BoldStyle({Color color = AppTheme.colorText3}) =>
       mainTextStyle(
         color: color,
         fontSize: font17,

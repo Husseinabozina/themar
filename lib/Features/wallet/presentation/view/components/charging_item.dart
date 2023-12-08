@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/widgets/reyal_text.dart';
@@ -38,7 +37,7 @@ class ChargingItem extends StatelessWidget {
                       style: AppTheme.Font15PrimaryBoldStyle(),
                     ),
                   ),
-                  Space(
+                  const Space(
                     height: 0,
                     width: 6,
                   ),
@@ -49,7 +48,7 @@ class ChargingItem extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(right: 35.w),
-            child: ReyalPriceText(
+            child: const ReyalPriceText(
                 mainAxisAlignment: MainAxisAlignment.end,
                 price: 255,
                 fontSize: AppTheme.font24,

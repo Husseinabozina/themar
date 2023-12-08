@@ -1,11 +1,9 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/Features/auth/views/components/group_widget.dart';
 import 'package:go_router/go_router.dart';
-import 'package:themar_app/Features/auth/views/screens/login/login_screen.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 
@@ -58,14 +56,11 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Hero(
                 tag: 'logo',
                 child: Center(
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: SvgPicture.asset(
-                      AppImages.logo,
-                      fit: BoxFit.fill,
-                      height: 188.11.h,
-                      width: 172.87.w,
-                    ),
+                  child: SvgPicture.asset(
+                    AppImages.logo,
+                    fit: BoxFit.fill,
+                    height: 188.11.h,
+                    width: 172.87.w,
                   ),
                 ),
               ),

@@ -14,16 +14,16 @@ class PersonalInfoPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          CustomNamedAppBar(
+          const CustomNamedAppBar(
             name: 'البيانات الشخصية',
           ),
-          Space(height: 35),
+          const Space(height: 35),
           Container(
             height: 83.h,
             width: 88.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(image: AssetImage(AppImages.tomato))),
+                image: const DecorationImage(image: AssetImage(AppImages.tomato))),
           ),
           Text(
             'محمد علي',
@@ -82,14 +82,14 @@ class AuthFormField1 extends StatelessWidget {
             ),
             floatingLabelAlignment: FloatingLabelAlignment.start,
             alignLabelWithHint: true,
-            floatingLabelStyle: TextStyle(color: AppTheme.colorPrimary),
+            floatingLabelStyle: const TextStyle(color: AppTheme.colorPrimary),
             suffixIcon:
-                Padding(padding: EdgeInsets.only(right: 10), child: icon),
-            suffixIconConstraints: BoxConstraints(),
-            contentPadding: EdgeInsets.all(20),
+                Padding(padding: const EdgeInsets.only(right: 10), child: icon),
+            suffixIconConstraints: const BoxConstraints(),
+            contentPadding: const EdgeInsets.all(20),
             focusColor: AppTheme.colorPrimary,
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(
+                borderSide: const BorderSide(
                     strokeAlign: BorderSide.strokeAlignCenter,
                     width: 0.5,
                     color: AppTheme.colorPrimary),

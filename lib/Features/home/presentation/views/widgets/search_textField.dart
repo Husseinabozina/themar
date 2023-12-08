@@ -5,8 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key, this.icon});
+  const SearchTextField({super.key, this.icon, this.hintText});
   final Widget? icon;
+  final String? hintText;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,20 +17,20 @@ class SearchTextField extends StatelessWidget {
           textDirection: TextDirection.rtl,
           cursorOpacityAnimates: true,
           decoration: InputDecoration(
-            prefixIcon: icon ?? null,
-            prefixIconConstraints: BoxConstraints(),
+            prefixIcon: icon,
+            prefixIconConstraints: const BoxConstraints(),
             hintStyle: AppTheme.Font15Text2LightStyle(),
             hintTextDirection: TextDirection.rtl,
-            contentPadding: EdgeInsets.only(top: 30),
+            contentPadding: const EdgeInsets.only(top: 30),
             border: OutlineInputBorder(
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(15).r),
-            hintText: "ابحث عن ما تريد؟",
+            hintText: hintText ?? "ابحث عن ما تريد؟",
             floatingLabelAlignment: FloatingLabelAlignment.start,
             alignLabelWithHint: true,
-            floatingLabelStyle: TextStyle(color: AppTheme.colorPrimary),
+            floatingLabelStyle: const TextStyle(color: AppTheme.colorPrimary),
             suffixIcon: Padding(
-                padding: EdgeInsets.only(right: 10, left: 10),
+                padding: const EdgeInsets.only(right: 10, left: 10),
                 child: SvgPicture.asset(AppImages.search)),
             suffixIconConstraints: const BoxConstraints(),
             // contentPadding: REdgeInsets.all(10).w,

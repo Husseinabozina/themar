@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/core/widgets/custom_back_button.dart';
@@ -23,7 +21,7 @@ class CategoryDetailedPageAppBar extends StatelessWidget {
                 fontSize: AppTheme.font20,
                 fontWeight: AppTheme.FontWeightBold),
           ),
-          CustomBackButton()
+          const CustomBackButton()
         ],
       ),
     );

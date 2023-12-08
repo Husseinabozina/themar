@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
-import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/core/widgets/reyal_text.dart';
@@ -13,7 +11,7 @@ class CartReceiptCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 139.h,
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       width: double.infinity,
       decoration: BoxDecoration(
           color: AppTheme.colorPrimarylight,
@@ -38,7 +36,7 @@ class CartReceiptCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ReyalPriceText(
+              const ReyalPriceText(
                   price: -40,
                   fontSize: 15,
                   fontweight: AppTheme.FontWeightMedium,
@@ -52,7 +50,7 @@ class CartReceiptCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ReyalPriceText(
+              const ReyalPriceText(
                   price: -40,
                   fontSize: 15,
                   fontweight: AppTheme.FontWeightMedium,
@@ -68,7 +66,7 @@ class CartReceiptCard extends StatelessWidget {
           ),
           Divider(
             height: 3.h,
-            color: Color(0xFFE2E2E2),
+            color: const Color(0xFFE2E2E2),
           ),
           SizedBox(
             height: 5.h,
@@ -76,7 +74,7 @@ class CartReceiptCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ReyalPriceText(
+              const ReyalPriceText(
                   price: 140,
                   fontSize: 15,
                   fontweight: AppTheme.FontWeightMedium,

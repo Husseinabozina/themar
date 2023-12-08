@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/bagcard_page.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +37,7 @@ class ReceiptCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ReyalPriceText(
+              const ReyalPriceText(
                   price: -40,
                   fontSize: 15,
                   fontweight: AppTheme.FontWeightMedium,
@@ -54,7 +53,7 @@ class ReceiptCard extends StatelessWidget {
           ),
           Divider(
             height: 3.h,
-            color: Color(0xFFE2E2E2),
+            color: const Color(0xFFE2E2E2),
           ),
           SizedBox(
             height: 5.h,
@@ -62,7 +61,7 @@ class ReceiptCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ReyalPriceText(
+              const ReyalPriceText(
                   price: 140,
                   fontSize: 15,
                   fontweight: AppTheme.FontWeightMedium,
@@ -84,7 +83,7 @@ class ReceiptCard extends StatelessWidget {
                 Container(
                   height: 16.h,
                   width: 51.w,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.fill, image: AssetImage(AppImages.visa))),
                 ),

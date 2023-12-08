@@ -8,7 +8,7 @@ class InstructionTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 117.h,
       child: TextField(
         maxLines: 7,

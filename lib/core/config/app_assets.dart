@@ -24,7 +24,7 @@ class AppImages {
   static const String orders = "assets/icons/orders.svg";
   static const String notification = "assets/icons/Notification.svg";
   static const String profile = "assets/icons/profile.svg";
-  static const String arrowDown = "assets/arrowDown.svg ";
+  static const String arrowDown = "assets/icons/arrowDown.svg ";
   static const String visa = "assets/visa.png";
   static const String map = "assets/map.png";
   static const String visa2 = "assets/visa2.png";
@@ -56,5 +56,8 @@ class AppImages {
   static const String edit_line = "assets/icons/line_edit.svg";
   static const String message = "assets/icons/Message.svg";
   static const String arrow_To_topRight = "assets/icons/arrow_To_topRight.svg";
+  static const String location_line = "assets/icons/Location_Line.svg";
   static const String addressMap = "assets/address map.png";
+  static const String confirmation = "assets/confirmation.svg";
+  static const String camera = "assets/camera.png";
 }

@@ -32,7 +32,7 @@ class _ProductImagesViewsState extends State<ProductImagesViews> {
             ],
           ),
         ),
-        Positioned(top: 40, child: const ProductDetailedPageAppBar()),
+        const Positioned(top: 40, child: ProductDetailedPageAppBar()),
         Positioned(
             bottom: 15,
             left: 140,

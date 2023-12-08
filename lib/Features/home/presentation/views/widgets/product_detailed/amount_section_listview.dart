@@ -67,7 +67,7 @@ class AmountSection extends StatelessWidget {
         ),
         Row(
           children: [
-            changeAmountButton(size: CustomSize.large),
+            const changeAmountButton(size: CustomSize.large),
             Expanded(
               child: Text(
                 "السعر / 1كجم",

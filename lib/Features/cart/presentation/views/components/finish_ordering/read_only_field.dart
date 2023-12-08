@@ -9,7 +9,7 @@ class ReadOnlyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: 60.h,
         child: TextField(
           textDirection: TextDirection.rtl,
@@ -25,9 +25,9 @@ class ReadOnlyTextField extends StatelessWidget {
               //   ),
               // ),
               prefixIcon: Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 10),
                   child: SvgPicture.asset(icon)),
-              prefixIconConstraints: BoxConstraints(),
+              prefixIconConstraints: const BoxConstraints(),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide:

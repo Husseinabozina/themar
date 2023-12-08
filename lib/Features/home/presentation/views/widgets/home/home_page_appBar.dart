@@ -20,7 +20,7 @@ class HomePageAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
+          SizedBox(
             height: 37.h,
             width: 32.w,
             child: Stack(
