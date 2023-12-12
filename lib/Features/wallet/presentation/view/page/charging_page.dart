@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/custom_button.dart';
+import 'package:themar_app/core/components/custom_button.dart';
 
 class ChargingPage extends StatelessWidget {
   const ChargingPage({super.key});
@@ -80,15 +80,18 @@ class FilledCustomTextField extends StatelessWidget {
       child: TextField(
           textDirection: TextDirection.rtl,
           decoration: InputDecoration(
-            hintStyle: AppTheme.Font15Text2LightStyle(color: const Color(0xFFAFAFAF)),
+            hintStyle:
+                AppTheme.Font15Text2LightStyle(color: const Color(0xFFAFAFAF)),
             hintTextDirection: TextDirection.rtl,
             contentPadding: const EdgeInsets.only(top: 30, right: 20),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15).r,
-                borderSide: const BorderSide(color: Color(0xFF8AC253), width: 0.5)),
+                borderSide:
+                    const BorderSide(color: Color(0xFF8AC253), width: 0.5)),
             disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15).r,
-                borderSide: const BorderSide(color: Color(0xFF8AC253), width: 0.5)),
+                borderSide:
+                    const BorderSide(color: Color(0xFF8AC253), width: 0.5)),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15).r,
                 borderSide: const BorderSide()),

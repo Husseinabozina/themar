@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PersonalInfoPage extends StatelessWidget {
@@ -23,7 +23,8 @@ class PersonalInfoPage extends StatelessWidget {
             width: 88.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                image: const DecorationImage(image: AssetImage(AppImages.tomato))),
+                image:
+                    const DecorationImage(image: AssetImage(AppImages.tomato))),
           ),
           Text(
             'محمد علي',

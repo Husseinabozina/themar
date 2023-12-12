@@ -4,9 +4,9 @@ import 'package:themar_app/Features/orders/presentation/views/components/order_c
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/utils/enums.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/receit_card.dart';
+import 'package:themar_app/core/components/receit_card.dart';
 
 class OrderDetailedPage extends StatelessWidget {
   const OrderDetailedPage({super.key, required this.index});

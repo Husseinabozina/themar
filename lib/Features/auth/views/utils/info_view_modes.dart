@@ -1,0 +1,1 @@
+enum InfoModes { personalInfo, carInfo }

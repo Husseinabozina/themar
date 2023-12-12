@@ -5,7 +5,7 @@ import 'package:themar_app/Features/wallet/presentation/view/components/charging
 import 'package:themar_app/Features/wallet/presentation/view/components/wallet_balance_section.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 

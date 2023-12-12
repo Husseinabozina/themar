@@ -5,7 +5,7 @@ import 'package:themar_app/Features/home/presentation/views/widgets/change_amoun
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/custom_icon_button.dart';
+import 'package:themar_app/core/components/custom_icon_button.dart';
 
 class OrderTile extends StatelessWidget {
   const OrderTile({

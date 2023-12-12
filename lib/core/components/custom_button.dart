@@ -32,7 +32,7 @@ class CustomButton extends StatelessWidget {
                     ((hasBordered == true)
                         ? AppTheme.colorText3
                         : AppTheme.colorPrimary),
-                borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(17)),
             child: TextButton(
                 onPressed: onPressed,
                 child: AnimatedSwitcher(

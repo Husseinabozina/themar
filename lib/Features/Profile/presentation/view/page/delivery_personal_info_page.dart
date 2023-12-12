@@ -6,12 +6,13 @@ import 'package:themar_app/Features/Profile/presentation/view/components/space.d
 import 'package:themar_app/Features/auth/views/components/auth_form_field.dart';
 import 'package:themar_app/Features/auth/views/components/phone_number_field.dart';
 import 'package:themar_app/Features/orders/presentation/views/components/toggleBottom.dart';
+import 'package:themar_app/core/components/car_info_section.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/custom_button.dart';
+import 'package:themar_app/core/components/custom_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -63,30 +64,7 @@ class DeliverPersonalInfomration extends StatelessWidget {
                   const Space(
                     height: 16,
                   ),
-                  if (state is CarInfo)
-                    Wrap(
-                      spacing: 50.w,
-                      runSpacing: 25.h,
-                      runAlignment: WrapAlignment.center,
-                      alignment: WrapAlignment.center,
-                      children: const [
-                        CameraTile(
-                          title: 'الاستماارة',
-                        ),
-                        CameraTile(
-                          title: 'الاستماارة',
-                        ),
-                        CameraTile(
-                          title: 'الاستماارة',
-                        ),
-                        CameraTile(
-                          title: 'الاستماارة',
-                        ),
-                        CameraTile(
-                          title: 'الاستماارة',
-                        ),
-                      ],
-                    ),
+                  if (state is CarInfo) CarInoCameraSection(),
                   const Space(
                     height: 25,
                   ),

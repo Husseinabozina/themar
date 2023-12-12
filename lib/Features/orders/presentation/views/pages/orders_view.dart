@@ -7,13 +7,12 @@ import 'package:go_router/go_router.dart';
 import 'package:themar_app/core/utils/enums.dart';
 
 class OrderesView extends StatelessWidget {
-  const OrderesView({super.key, this.text});
-  final String? text;
+  const OrderesView({super.key, required this.orderstatus});
+  final OrderStatus orderstatus;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(text ?? ''),
         ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -24,7 +23,7 @@ class OrderesView extends StatelessWidget {
                 },
                 child: OrderCard(
                   isLogin: true,
-                  order: Order(orderStatus: OrderStatus.done),
+                  order: Order(orderStatus: orderstatus),
                 )),
             separatorBuilder: (context, index) => SizedBox(
                   height: 18.h,

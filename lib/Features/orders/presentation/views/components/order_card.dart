@@ -9,7 +9,7 @@ import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:themar_app/core/utils/enums.dart';
-import 'package:themar_app/core/widgets/reyal_text.dart';
+import 'package:themar_app/core/components/reyal_text.dart';
 
 class OrderCard extends StatefulWidget {
   const OrderCard({super.key, this.isLogin, required this.order});
@@ -44,6 +44,11 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin {
     orderCubit.controller.addListener(() {
       setState(() {});
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

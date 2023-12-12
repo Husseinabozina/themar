@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:themar_app/Features/cart/presentation/views/components/finish_ordering/paycard_item.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_button.dart';
+import 'package:themar_app/core/components/custom_button.dart';
 
 class BottomSheetContainer extends StatelessWidget {
   const BottomSheetContainer({

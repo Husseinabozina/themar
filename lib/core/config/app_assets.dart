@@ -60,4 +60,14 @@ class AppImages {
   static const String addressMap = "assets/address map.png";
   static const String confirmation = "assets/confirmation.svg";
   static const String camera = "assets/camera.png";
+  static const String flag_grey = "assets/icons/flag_grey.svg";
+  static const String identification_grey =
+      "assets/icons/identification_grey.svg";
+  static const String location_grey_solid =
+      "assets/icons/location_grey_solid.svg";
+  static const String user_grey = "assets/icons/user_grey.svg";
+  static const String email_grey = "assets/icons/email_grey.svg";
+  static const String bank_building = "assets/icons/bank_building.svg";
+  static const String car = "assets/icons/car.svg";
+  static const String save_money = "assets/icons/save-money.svg";
 }

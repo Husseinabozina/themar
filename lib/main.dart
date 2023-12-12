@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:themar_app/Features/Profile/presentation/manager/cubit/profile_cubit.dart';
+import 'package:themar_app/Features/auth/views/manager/cubit/registeration/register_cubit.dart';
 import 'package:themar_app/Features/home/presentation/manager/cubit/home_cubit.dart';
 import 'package:themar_app/Features/orders/presentation/manager/cubit/order_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,6 +37,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProfileCubit(),
+        ),
+        BlocProvider(
+          create: (context) => RegisterCubit(),
         )
       ],
       child: ScreenUtilInit(

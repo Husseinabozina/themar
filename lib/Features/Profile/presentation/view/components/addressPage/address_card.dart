@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_icon_button.dart';
+import 'package:themar_app/core/components/custom_icon_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddressCard extends StatelessWidget {

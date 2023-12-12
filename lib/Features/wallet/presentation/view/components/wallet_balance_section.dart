@@ -5,7 +5,7 @@ import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:go_router/go_router.dart';
-import 'package:themar_app/core/widgets/reyal_text.dart';
+import 'package:themar_app/core/components/reyal_text.dart';
 
 class WalletBalanceSection extends StatelessWidget {
   const WalletBalanceSection({super.key});

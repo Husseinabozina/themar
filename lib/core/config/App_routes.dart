@@ -9,6 +9,11 @@ import 'package:themar_app/Features/Profile/presentation/view/page/pay_page.dart
 import 'package:themar_app/Features/Profile/presentation/view/page/personal_information_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/profile_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/question_page.dart';
+import 'package:themar_app/Features/auth/views/screens/registeration/delivery_registeration_screen.dart';
+import 'package:themar_app/Features/auth/views/screens/registeration/register_screen.dart';
+import 'package:themar_app/Features/auth/views/screens/resit_password/new_password.dart';
+import 'package:themar_app/Features/auth/views/screens/resit_password/pin_screen.dart';
+import 'package:themar_app/Features/auth/views/screens/resit_password/reset_password_screen.dart';
 import 'package:themar_app/Features/home/presentation/views/pages/delivery_order_detailed_page.dart';
 import 'package:themar_app/Features/notification/presentation/page/notifications_page.dart';
 import 'package:themar_app/Features/orders/presentation/views/pages/delivery_orders_page.dart';
@@ -54,6 +59,11 @@ class AppRoutes {
   static const deliveryOrdersPage = '/DeliveryOrdersPage';
   static const deliveryOrderDetailedPage = '/DeliveryOrderDetailedPage';
   static const deliveryPersonalInformation = '/DeliveryPersonalInformaton';
+  static const registerScreen = '/RegisterScreen';
+  static const resetPasswordScreen = '/resetPasswordScreen';
+  static const pinScreen = '/PinScreen';
+  static const newPasswordScreen = '/NewPasswordScreen';
+  static const deliverRegisterScreen = '/DeliverRegisterScreen';
 
   static final router = GoRouter(routes: [
     GoRoute(
@@ -62,7 +72,7 @@ class AppRoutes {
     ),
     GoRoute(
       path: loginPage,
-      builder: (context, state) => const LoginScreen(),
+      builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
       path: homeScreen,
@@ -162,6 +172,26 @@ class AppRoutes {
     GoRoute(
       path: deliveryPersonalInformation,
       builder: (context, state) => const DeliverPersonalInfomration(),
+    ),
+    GoRoute(
+      path: registerScreen,
+      builder: (context, state) => const RegisterScreen(),
+    ),
+    GoRoute(
+      path: resetPasswordScreen,
+      builder: (context, state) => const ResetPasswordScreen(),
+    ),
+    GoRoute(
+      path: pinScreen,
+      builder: (context, state) => const PinScreen(),
+    ),
+    GoRoute(
+      path: newPasswordScreen,
+      builder: (context, state) => const NewPasswordScreen(),
+    ),
+    GoRoute(
+      path: deliverRegisterScreen,
+      builder: (context, state) => const DeliverRegisterScreen(),
     ),
   ]);
 }

@@ -5,6 +5,8 @@ import 'package:themar_app/Features/orders/presentation/views/components/toggleB
 import 'package:themar_app/Features/orders/presentation/views/pages/orders_view.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:themar_app/core/utils/enums.dart';
 
 class DeliveryOrdersPage extends StatefulWidget {
   const DeliveryOrdersPage({super.key});
@@ -17,8 +19,6 @@ class _DeliveryOrdersPageState extends State<DeliveryOrdersPage> {
   int viewIndex = 0;
 
   void changeIndex(int index) {
-    print(
-        'changingchangingchangingchangingchangingchangingchangingchangingchanging ');
     setState(() {
       viewIndex = index;
     });
@@ -26,9 +26,11 @@ class _DeliveryOrdersPageState extends State<DeliveryOrdersPage> {
 
   List<Widget> viewlist = [
     const OrderesView(
-      text: 'sdfljsdf',
+      orderstatus: OrderStatus.done,
     ),
-    const OrderesView(),
+    const OrderesView(
+      orderstatus: OrderStatus.waiting,
+    ),
   ];
 
   @override
@@ -43,7 +45,11 @@ class _DeliveryOrdersPageState extends State<DeliveryOrdersPage> {
               style: AppTheme.Font20PrimaryBoldStyle(),
             ),
             Space(height: 30.h),
-            const AnimatedToggleButtom(leftTitle: 'المنتهية', rightTitle: "الحالية"),
+            AnimatedToggleButtom(
+              leftTitle: 'المنتهية',
+              rightTitle: "الحالية",
+              onTap: changeIndex,
+            ),
             Space(height: 19.h),
             const SearchTextField(),
             Space(height: 19.h),

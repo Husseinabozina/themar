@@ -3,10 +3,10 @@ import 'package:themar_app/Features/Profile/presentation/view/components/space.d
 import 'package:themar_app/Features/cart/presentation/views/components/finish_ordering/paycard_item.dart';
 import 'package:themar_app/Features/wallet/presentation/view/components/wallet_balance_section.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/custom_button.dart';
-import 'package:themar_app/core/widgets/custom_textField.dart';
+import 'package:themar_app/core/components/custom_button.dart';
+import 'package:themar_app/core/components/custom_textField.dart';
 
 class PayPage extends StatelessWidget {
   const PayPage({super.key});
@@ -88,7 +88,8 @@ class PayPage extends StatelessWidget {
                       Expanded(
                           child: SizedBox(
                               height: 55.h,
-                              child: const customTextField(hintText: 'hintText'))),
+                              child:
+                                  const customTextField(hintText: 'hintText'))),
                       const SizedBox(width: 20),
                       Expanded(
                           child: SizedBox(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/reyal_text.dart';
+import 'package:themar_app/core/components/reyal_text.dart';
 
 class ReceiptCard extends StatelessWidget {
   const ReceiptCard({super.key, required this.isOrdered});

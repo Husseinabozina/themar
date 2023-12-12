@@ -11,8 +11,8 @@ import 'package:themar_app/Features/cart/presentation/views/components/finish_or
 import 'package:themar_app/Features/cart/presentation/views/components/finish_ordering/selected_pay_card.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
-import 'package:themar_app/core/widgets/custom_button.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_button.dart';
 
 class FinsihOrderPage extends StatefulWidget {
   const FinsihOrderPage({super.key});

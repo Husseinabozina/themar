@@ -38,7 +38,8 @@ class _OrdersPageState extends State<OrdersPage> with TickerProviderStateMixin {
             SizedBox(
               height: 24.h,
             ),
-            const AnimatedToggleButtom(leftTitle: 'المنتهية', rightTitle: "الحالية")
+            const AnimatedToggleButtom(
+                leftTitle: 'المنتهية', rightTitle: "الحالية")
             // MyToggleButton(),
             ,
             const Space(

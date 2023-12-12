@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
-import 'package:themar_app/core/widgets/reyal_text.dart';
+import 'package:themar_app/core/components/reyal_text.dart';
 
 class ChargingItem extends StatelessWidget {
   const ChargingItem({

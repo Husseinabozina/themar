@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 
 class AddressPickerPage extends StatelessWidget {
   const AddressPickerPage({super.key});

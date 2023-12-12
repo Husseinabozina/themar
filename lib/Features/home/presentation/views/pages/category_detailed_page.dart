@@ -3,7 +3,7 @@ import 'package:themar_app/Features/Profile/presentation/view/components/space.d
 import 'package:themar_app/Features/home/presentation/views/widgets/category_detailed/filters_icon.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/products_grid_view.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/search_textField.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryDetailedPage extends StatelessWidget {

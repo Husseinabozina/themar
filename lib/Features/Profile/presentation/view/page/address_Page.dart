@@ -3,7 +3,7 @@ import 'package:themar_app/Features/Profile/presentation/view/components/address
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/Features/wallet/presentation/view/components/wallet_balance_section.dart';
 import 'package:themar_app/core/config/App_routes.dart';
-import 'package:themar_app/core/widgets/custom_appbar.dart';
+import 'package:themar_app/core/components/custom_appbar.dart';
 import 'package:go_router/go_router.dart';
 
 class AddressPage extends StatelessWidget {

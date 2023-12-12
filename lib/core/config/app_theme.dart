@@ -24,6 +24,10 @@ class AppTheme {
           {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(
           color: color, fontSize: font16, fontWeight: FontWeightLight);
+  static TextStyle? Font16LightText2Style(
+          {Color color = AppTheme.colorText2}) =>
+      mainTextStyle(
+          color: color, fontSize: font16, fontWeight: FontWeightLight);
   static TextStyle? Font16PrimaryMediumStyle(
           {Color color = AppTheme.colorPrimary}) =>
       mainTextStyle(

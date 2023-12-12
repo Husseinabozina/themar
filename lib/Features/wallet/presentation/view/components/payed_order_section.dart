@@ -4,7 +4,7 @@ import 'package:themar_app/Features/Profile/presentation/view/components/space.d
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/core/widgets/reyal_text.dart';
+import 'package:themar_app/core/components/reyal_text.dart';
 
 class PayedOrderItem extends StatelessWidget {
   const PayedOrderItem({
