@@ -74,92 +74,96 @@ class RegisterScreen extends StatelessWidget {
                             height: 10,
                           ),
                           Form(
+                              key: cubit.registerFormKey,
                               child: Column(children: [
-                            AuthFormField(
-                              controller: cubit.userNameController,
-                              valueKey: 4,
-                              label: usernameText,
-                              icon: SvgPicture.asset(
-                                AppImages.unlock,
-                                height: 25.h,
-                                width: 25.w,
-                              ),
-                            ),
-                            PhoneNumberField(
-                              contorller: cubit.phoneNumberController,
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            AuthFormField(
-                              controller: cubit.cityController,
-                              valueKey: 3,
-                              label: cityText,
-                              icon: SvgPicture.asset(
-                                AppImages.unlock,
-                                height: 25.h,
-                                width: 25.w,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            AuthFormField(
-                              controller: cubit.passwordController,
-                              valueKey: 5,
-                              label: passwordText,
-                              icon: SvgPicture.asset(
-                                AppImages.unlock,
-                                height: 25.h,
-                                width: 25.w,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            AuthFormField(
-                              controller: cubit.renterPasswordController,
-                              valueKey: 5,
-                              label: ensurePasswordText,
-                              icon: SvgPicture.asset(
-                                AppImages.unlock,
-                                height: 25.h,
-                                width: 25.w,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                          ]))
+                                AuthFormField(
+                                  validator: (_) => cubit.validateUsername(),
+                                  controller: cubit.userNameController,
+                                  valueKey: 4,
+                                  label: usernameText,
+                                  icon: SvgPicture.asset(
+                                    AppImages.unlock,
+                                    height: 25.h,
+                                    width: 25.w,
+                                  ),
+                                ),
+                                PhoneNumberField(
+                                  contorller: cubit.phoneNumberController,
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                AuthFormField(
+                                  validator: (_) => cubit.validateCity(),
+                                  controller: cubit.cityController,
+                                  valueKey: 3,
+                                  label: cityText,
+                                  icon: SvgPicture.asset(
+                                    AppImages.unlock,
+                                    height: 25.h,
+                                    width: 25.w,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                AuthFormField(
+                                  validator: (_) => cubit.validatePassword(),
+                                  controller: cubit.passwordController,
+                                  valueKey: 5,
+                                  label: passwordText,
+                                  icon: SvgPicture.asset(
+                                    AppImages.unlock,
+                                    height: 25.h,
+                                    width: 25.w,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                AuthFormField(
+                                  validator: (_) =>
+                                      cubit.validateRenterPassword(),
+                                  controller: cubit.renterPasswordController,
+                                  valueKey: 5,
+                                  label: ensurePasswordText,
+                                  icon: SvgPicture.asset(
+                                    AppImages.unlock,
+                                    height: 25.h,
+                                    width: 25.w,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        GoRouter.of(context).push(
+                                            AppRoutes.resetPasswordScreen);
+                                      },
+                                      child: Text(
+                                        'نسيت كلمة المرور ؟',
+                                        style: AppTheme.Font16Text2LightStyle(),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 8.h,
+                                ),
+                                CustomButton(
+                                  title: Text(
+                                    'تسجيل الدخول',
+                                    style: AppTheme.Font15Text3BoldStyle(),
+                                  ),
+                                  onPressed: () => cubit.register(context),
+                                ),
+                              ]))
                         ],
                       );
-                    },
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          GoRouter.of(context)
-                              .push(AppRoutes.resetPasswordScreen);
-                        },
-                        child: Text(
-                          'نسيت كلمة المرور ؟',
-                          style: AppTheme.Font16Text2LightStyle(),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  CustomButton(
-                    title: Text(
-                      'تسجيل الدخول',
-                      style: AppTheme.Font15Text3BoldStyle(),
-                    ),
-                    onPressed: () {
-                      GoRouter.of(context).push(AppRoutes.homeScreen);
                     },
                   ),
                   SizedBox(

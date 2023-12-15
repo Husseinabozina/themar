@@ -9,6 +9,7 @@ import 'package:themar_app/Features/Profile/presentation/view/page/pay_page.dart
 import 'package:themar_app/Features/Profile/presentation/view/page/personal_information_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/profile_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/question_page.dart';
+import 'package:themar_app/Features/auth/views/screens/registeration/active_pin_screen.dart';
 import 'package:themar_app/Features/auth/views/screens/registeration/delivery_registeration_screen.dart';
 import 'package:themar_app/Features/auth/views/screens/registeration/register_screen.dart';
 import 'package:themar_app/Features/auth/views/screens/resit_password/new_password.dart';
@@ -64,6 +65,7 @@ class AppRoutes {
   static const pinScreen = '/PinScreen';
   static const newPasswordScreen = '/NewPasswordScreen';
   static const deliverRegisterScreen = '/DeliverRegisterScreen';
+  static const activatePinPage = '/activatePinPage';
 
   static final router = GoRouter(routes: [
     GoRoute(
@@ -192,6 +194,10 @@ class AppRoutes {
     GoRoute(
       path: deliverRegisterScreen,
       builder: (context, state) => const DeliverRegisterScreen(),
+    ),
+    GoRoute(
+      path: activatePinPage,
+      builder: (context, state) => const ActivatePinPage(),
     ),
   ]);
 }

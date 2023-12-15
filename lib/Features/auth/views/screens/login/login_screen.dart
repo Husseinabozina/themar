@@ -3,12 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/auth/views/components/auth_form_field.dart';
 import 'package:themar_app/Features/auth/views/components/group_widget.dart';
 import 'package:themar_app/Features/auth/views/components/phone_number_field.dart';
+import 'package:themar_app/Features/auth/views/manager/cubit/login/login_cubit.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/core/components/custom_button.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -59,53 +61,63 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      Form(
-                          child: Column(children: [
-                        const PhoneNumberField(),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        AuthFormField(
-                          valueKey: 5,
-                          label: 'كلمة المرور',
-                          icon: SvgPicture.asset(
-                            AppImages.unlock,
-                            height: 25.h,
-                            width: 25.w,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                      ]))
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          GoRouter.of(context)
-                              .push(AppRoutes.resetPasswordScreen);
+                      BlocConsumer<LoginCubit, LoginState>(
+                        listener: (context, state) {},
+                        builder: (context, state) {
+                          final cubit = LoginCubit.get(context);
+                          return Form(
+                              key: cubit.loginFormKey,
+                              child: Column(children: [
+                                PhoneNumberField(
+                                  contorller: cubit.phoneNumberController,
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                AuthFormField(
+                                  validator: (_) => cubit.validatePassword(),
+                                  controller: cubit.passwordController,
+                                  label: 'كلمة المرور',
+                                  icon: SvgPicture.asset(
+                                    AppImages.unlock,
+                                    height: 25.h,
+                                    width: 25.w,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        GoRouter.of(context).push(
+                                            AppRoutes.resetPasswordScreen);
+                                      },
+                                      child: Text(
+                                        'نسيت كلمة المرور ؟',
+                                        style: AppTheme.Font16Text2LightStyle(),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 8.h,
+                                ),
+                                CustomButton(
+                                  title: Text(
+                                    'تسجيل الدخول',
+                                    style: AppTheme.Font15Text3BoldStyle(),
+                                  ),
+                                  onPressed: () {
+                                    cubit.login(context);
+                                  },
+                                ),
+                              ]));
                         },
-                        child: Text(
-                          'نسيت كلمة المرور ؟',
-                          style: AppTheme.Font16Text2LightStyle(),
-                        ),
-                      ),
+                      )
                     ],
-                  ),
-                  SizedBox(
-                    height: 8.h,
-                  ),
-                  CustomButton(
-                    title: Text(
-                      'تسجيل الدخول',
-                      style: AppTheme.Font15Text3BoldStyle(),
-                    ),
-                    onPressed: () {
-                      GoRouter.of(context).push(AppRoutes.homeScreen);
-                    },
                   ),
                   SizedBox(
                     height: 50.h,

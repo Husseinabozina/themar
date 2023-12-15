@@ -8,19 +8,23 @@ class AuthFormField extends StatelessWidget {
       required this.label,
       required this.icon,
       this.isEnabled,
-      required this.valueKey,
-      this.controller});
+      this.valueKey,
+      this.controller,
+      this.validator});
   final String label;
   final Widget icon;
   final bool? isEnabled;
-  final int valueKey;
+  final int? valueKey;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 70.h,
+    return Directionality(
+      textDirection: TextDirection.rtl,
       child: TextFormField(
+          textAlign: TextAlign.right,
+          validator: validator,
           controller: controller ?? null,
           key: ValueKey(valueKey),
           enabled: isEnabled ?? true,
@@ -29,16 +33,15 @@ class AuthFormField extends StatelessWidget {
           decoration: InputDecoration(
             filled: isEnabled == false ? true : false,
             fillColor: isEnabled == false ? const Color(0xFFFAFFF5) : null,
-            label: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [Text(label)],
+            label: Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Text(label),
             ),
-            floatingLabelAlignment: FloatingLabelAlignment.start,
             alignLabelWithHint: true,
             floatingLabelStyle: const TextStyle(color: AppTheme.colorPrimary),
-            suffixIcon:
+            prefixIcon:
                 Padding(padding: const EdgeInsets.only(right: 10), child: icon),
-            suffixIconConstraints: const BoxConstraints(),
+            prefixIconConstraints: const BoxConstraints(),
             contentPadding: const EdgeInsets.all(20),
             focusColor: AppTheme.colorPrimary,
             disabledBorder: OutlineInputBorder(
@@ -48,13 +51,24 @@ class AuthFormField extends StatelessWidget {
                     color: AppTheme.colorPrimary),
                 borderRadius: BorderRadius.circular(10)),
             focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                    strokeAlign: BorderSide.strokeAlignCenter,
-                    width: 1,
-                    color: AppTheme.colorPrimary),
+                borderSide:
+                    const BorderSide(width: 1, color: AppTheme.colorPrimary),
                 borderRadius: BorderRadius.circular(10)),
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(width: 1, color: Colors.grey.shade400),
+                borderRadius: BorderRadius.circular(10)),
+            focusedErrorBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  strokeAlign: BorderSide.strokeAlignInside,
+                  color: Colors.red,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(10)),
+            errorBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.red,
+                  width: 1,
+                ),
                 borderRadius: BorderRadius.circular(10)),
           )),
     );

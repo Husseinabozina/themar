@@ -53,15 +53,6 @@ class _PinScreenState extends State<PinScreen> {
   }
 
   String twoDigits(int n) => n.toString().padLeft(2, '0');
-  // Widget buildTime() {
-  //
-  //   final minutes = twoDigits(duration.inMinutes.remainder(60));
-  //   final seconds = twoDigits(duration.inSeconds.remainder(60));
-  //   return Text(
-  //     '$minutes:$seconds',
-  //     style: const TextStyle(fontSize: 30, color: AppTheme.colorPrimary),
-  //   );
-  // }
 
   @override
   void dispose() {
@@ -128,20 +119,6 @@ class _PinScreenState extends State<PinScreen> {
                           ],
                         ),
                       ),
-                      // Wrap(
-                      //   alignment: WrapAlignment.start,
-                      //   textDirection: TextDirection.rtl,
-
-                      //   children: [
-                      //     Text(
-                      //       '''أدخل الكود المكون من 4 أرقام المرسل علي رقم الجوال+9660548745 ''',
-                      //       textDirection: TextDirection.rtl,
-                      //       key: const ValueKey("login"),
-                      //       style: AppTheme.Font16Text2LightStyle(),
-                      //     ),
-                      //     Text('ldjfsldkjfldsjf')
-                      //   ],
-                      // ),
                       const SizedBox(
                         height: 10,
                       ),

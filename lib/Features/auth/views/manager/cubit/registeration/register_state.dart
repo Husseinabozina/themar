@@ -7,3 +7,9 @@ class RegisterInitial extends RegisterState {}
 class PeronalInfoComplete extends RegisterState {}
 
 class PeronalInfoback extends RegisterState {}
+
+class RegisterLoading extends RegisterState {}
+
+class RegisterSuccess extends RegisterState {}
+
+class RegisterFailure extends RegisterState {}
