@@ -69,33 +69,34 @@ class PayPage extends StatelessWidget {
                 padding: EdgeInsets.only(top: 12.h, left: 16.w, right: 16.w),
                 child: Column(children: [
                   Text(
-                    'data',
+                    "إضافة بطاقة",
                     style: AppTheme.Font15PrimaryBoldStyle(),
                   ),
                   const Space(height: 20),
                   SizedBox(
                       height: 55.h,
                       child: const customTextField(
-                        hintText: 'hintText',
+                        hintText: 'اسم صاحم البطاقة ',
                       )),
                   const Space(height: 10),
                   SizedBox(
                       height: 55.h,
-                      child: const customTextField(hintText: 'hintText')),
+                      child: const customTextField(hintText: "رقم البطاقة")),
                   const Space(height: 10),
                   Row(
                     children: [
                       Expanded(
                           child: SizedBox(
-                              height: 55.h,
-                              child:
-                                  const customTextField(hintText: 'hintText'))),
+                        height: 55.h,
+                        child: const customTextField(
+                            hintText: 'الرقم السري (Cvv)'),
+                      )),
                       const SizedBox(width: 20),
                       Expanded(
                           child: SizedBox(
-                        height: 55.h,
-                        child: const customTextField(hintText: 'hintText'),
-                      )),
+                              height: 55.h,
+                              child: const customTextField(
+                                  hintText: 'تاريخ الإنتهاء (شهر سنة)'))),
                     ],
                   ),
                   const Space(height: 10),

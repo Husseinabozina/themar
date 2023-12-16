@@ -95,7 +95,7 @@ class HomePage extends StatelessWidget {
         builder: (ctx) {
           return Container(
             padding: const EdgeInsets.all(16),
-            height: 1.sw,
+            height: 0.5.sh,
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
               topLeft: Radius.circular(30),
@@ -109,9 +109,9 @@ class HomePage extends StatelessWidget {
                 ),
                 const Space(height: 29),
                 const AddressCard(),
-                const Space(height: 29),
+                const Space(height: 20),
                 const AddressCard(),
-                const Space(height: 29),
+                const Space(height: 20),
                 DottedBorderButton(onTap: () {}, title: 'إضافةعنوان جديد')
               ],
             ),

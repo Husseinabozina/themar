@@ -13,7 +13,7 @@ class AddressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.only(top: 4.h, left: 13.w, right: 16.w, bottom: 15.h),
+      padding: EdgeInsets.only(top: 4.h, left: 13.w, right: 16.w, bottom: 10.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15).r,
           border: Border.all(color: AppTheme.colorPrimary)),
@@ -44,19 +44,19 @@ class AddressCard extends StatelessWidget {
           Column(
             children: [
               Text(
-                'ميتبمستيبميتبسي',
+                'المنزل',
                 style: AppTheme.Font15PrimaryBoldStyle(),
               ),
               Text(
-                'مسيتبمنيتبمتسنيب',
+                "العنوان : 119 طريق الملك عبدالعزيز",
                 style: AppTheme.Font14PrimaryNormalStyle(),
               ),
               Text(
-                'سنيخبيمكبنسيمبكنميسبta',
+                "الوصف",
                 style: AppTheme.Font14Text2LightStyle(),
               ),
               Text(
-                'مسنيبنيسبنمستيبسيتنب',
+                "رقم الجوال",
                 style: AppTheme.Font14Text2LightStyle(),
               ),
             ],

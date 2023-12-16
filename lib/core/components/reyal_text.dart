@@ -24,7 +24,7 @@ class ReyalPriceText extends StatelessWidget {
         FittedBox(
           fit: BoxFit.fill,
           child: Text(
-            'ر.س',
+            " ر.س",
             textDirection: TextDirection.rtl,
             style: AppTheme.mainTextStyle(
                 color: fontcolor, fontSize: fontSize, fontWeight: fontweight),

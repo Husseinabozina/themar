@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themar_app/Features/Profile/data/order.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/utils/enums.dart';
 
@@ -30,3 +31,18 @@ Widget checkOrderStatus(OrderStatus orderStatus) {
               fontWeight: FontWeight.bold));
   }
 }
+
+List getPreparedOrderList = [
+  Order(orderStatus: OrderStatus.gettingPrepared),
+  Order(orderStatus: OrderStatus.gettingPrepared),
+  Order(orderStatus: OrderStatus.gettingPrepared),
+  Order(orderStatus: OrderStatus.gettingPrepared),
+  Order(orderStatus: OrderStatus.gettingPrepared),
+];
+List doneOrderList = [
+  Order(orderStatus: OrderStatus.done),
+  Order(orderStatus: OrderStatus.done),
+  Order(orderStatus: OrderStatus.done),
+  Order(orderStatus: OrderStatus.done),
+  Order(orderStatus: OrderStatus.done),
+];

@@ -50,7 +50,7 @@ class PersonalInfoSection extends StatelessWidget {
               GoRouter.of(context).push(AppRoutes.adressPage);
             },
             title: 'العناوين',
-            imageIcon: AppImages.location_line,
+            imageIcon: AppImages.locationMap,
           ),
           const Divider(
             thickness: 0.2,

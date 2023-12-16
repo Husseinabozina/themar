@@ -22,10 +22,12 @@ class SuggestionPage extends StatelessWidget {
             const Space(height: 10),
             const SizedBox(
                 height: 55, child: customTextField(hintText: 'الاسم')),
+            const Space(height: 10),
             const customTextField(
               hintText: 'الموضوع',
               maxlines: 3,
             ),
+            const Space(height: 25),
             CustomButton(
                 title: Text(
                   'إرسال',

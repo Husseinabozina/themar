@@ -119,58 +119,63 @@ class PayCardItem extends StatelessWidget {
             ),
           ),
           Container(
-            padding:
-                const EdgeInsets.only(left: 18, top: 17.5, right: 10, bottom: 16).r,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(AppImages.visa2White),
-                    const Text(
-                      'Mohamed ali',
-                      style: TextStyle(
-                          fontSize: AppTheme.font9,
-                          fontWeight: AppTheme.FontWeightBold,
-                          color: AppTheme.colorText3),
-                    ),
-                    const Text(
-                      '**** **** 4512',
-                      style: TextStyle(
-                          fontSize: AppTheme.font9,
-                          fontWeight: AppTheme.FontWeightBold,
-                          color: AppTheme.colorText3),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 18, top: 17.5, right: 10, bottom: 16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset(AppImages.visa2White),
+                      const Text(
+                        'Mohamed ali',
+                        style: TextStyle(
+                            fontSize: AppTheme.font9,
+                            fontWeight: AppTheme.FontWeightBold,
+                            color: AppTheme.colorText3),
+                      ),
+                      const Text(
+                        '**** **** 4512',
+                        style: TextStyle(
+                            fontSize: AppTheme.font9,
+                            fontWeight: AppTheme.FontWeightBold,
+                            color: AppTheme.colorText3),
+                      ),
+                    ],
+                  ),
                 ),
-                const Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(
-                      Icons.check_box,
-                      color: Colors.white,
-                      size: 15,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'ValidDate',
-                          style: TextStyle(
-                              fontSize: 5,
-                              fontWeight: AppTheme.FontWeightBold,
-                              color: AppTheme.colorText3),
-                        ),
-                        Text(
-                          '06/22',
-                          style: TextStyle(
-                              fontSize: AppTheme.font9,
-                              fontWeight: AppTheme.FontWeightnomral,
-                              color: AppTheme.colorText3),
-                        ),
-                      ],
-                    )
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15, right: 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Checkbox(
+                          value: true,
+                          onChanged: (_) {},
+                          checkColor: Colors.black,
+                          fillColor: MaterialStateProperty.all(Colors.white)),
+                      const Column(
+                        children: [
+                          Text(
+                            'ValidDate',
+                            style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: AppTheme.FontWeightBold,
+                                color: AppTheme.colorText3),
+                          ),
+                          Text(
+                            '06/22',
+                            style: TextStyle(
+                                fontSize: AppTheme.font12,
+                                fontWeight: AppTheme.FontWeightnomral,
+                                color: AppTheme.colorText3),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 )
               ],
             ),
