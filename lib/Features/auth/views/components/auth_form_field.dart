@@ -10,13 +10,15 @@ class AuthFormField extends StatelessWidget {
       this.isEnabled,
       this.valueKey,
       this.controller,
-      this.validator});
+      this.validator,
+      this.suffixIcon});
   final String label;
   final Widget icon;
   final bool? isEnabled;
   final int? valueKey;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +43,7 @@ class AuthFormField extends StatelessWidget {
             floatingLabelStyle: const TextStyle(color: AppTheme.colorPrimary),
             prefixIcon:
                 Padding(padding: const EdgeInsets.only(right: 10), child: icon),
+            suffixIcon: suffixIcon,
             prefixIconConstraints: const BoxConstraints(),
             contentPadding: const EdgeInsets.all(20),
             focusColor: AppTheme.colorPrimary,

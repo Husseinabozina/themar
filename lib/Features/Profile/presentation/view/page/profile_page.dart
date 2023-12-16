@@ -6,8 +6,10 @@ import 'package:themar_app/Features/Profile/presentation/view/components/persona
 import 'package:themar_app/Features/Profile/presentation/view/components/common_question_section.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/profilePage/profile_header.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
+import 'package:themar_app/Features/auth/views/manager/cubit/login/login_cubit.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -21,12 +23,12 @@ class ProfilePage extends StatelessWidget {
             const ProfileHeader(),
             const Space(height: 20),
             const PersonalInfoSection(),
+            const Space(height: 20),
 
             const QuestionSection(),
             // section three //////
-            SizedBox(
-              height: 20.h,
-            ),
+            const Space(height: 20),
+
             const AboutAppSection(),
             const Space(height: 20),
             Padding(
@@ -52,9 +54,14 @@ class ProfilePage extends StatelessWidget {
                         height: 20,
                         width: 20,
                         child: SvgPicture.asset(AppImages.signOut)),
-                    Text(
-                      'تسجيل الخروج',
-                      style: AppTheme.Font13PrimaryBoldStyle(),
+                    InkWell(
+                      onTap: () {
+                        BlocProvider.of<LoginCubit>(context).signOUt(context);
+                      },
+                      child: Text(
+                        'تسجيل الخروج',
+                        style: AppTheme.Font13PrimaryBoldStyle(),
+                      ),
                     ),
                   ],
                 ),

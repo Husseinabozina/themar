@@ -34,6 +34,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: null
+  get: ^4.6.6
   image_picker: ^1.0.4
   intl: ^0.19.0
   pinput: ^3.0.1

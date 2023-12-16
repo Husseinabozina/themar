@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           backgroundColor: const Color(0xFFFDFDFD),
           body: homecubit.getCurrentPage(),
           bottomNavigationBar: CustomNavigationBar(
-            items: homecubit.deliveryNavItems,
+            items: homecubit.clientNavItems,
             currentIndex: homecubit.currentIndex,
             onTab: (index) => homecubit.onNavBarTap(index),
           ),

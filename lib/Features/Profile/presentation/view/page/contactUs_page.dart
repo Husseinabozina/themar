@@ -16,7 +16,7 @@ class ContactUsPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               const CustomNamedAppBar(name: 'تواصل معنا'),
@@ -29,6 +29,7 @@ class ContactUsPage extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     image: const DecorationImage(
+                        fit: BoxFit.fill,
                         image: AssetImage(AppImages.addressMap))),
                 child: Stack(
                   clipBehavior: Clip.none,
@@ -38,7 +39,7 @@ class ContactUsPage extends StatelessWidget {
                       right: 10,
                       left: 10,
                       child: Container(
-                        height: 119,
+                        margin: EdgeInsets.symmetric(horizontal: 8.w),
                         width: 312.w,
                         decoration: BoxDecoration(
                           boxShadow: const [
@@ -52,7 +53,7 @@ class ContactUsPage extends StatelessWidget {
                           color: AppTheme.colorText3,
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        padding: const EdgeInsets.all(15).h,
+                        padding: const EdgeInsets.all(20),
                         child: Column(
                           children: [
                             Row(

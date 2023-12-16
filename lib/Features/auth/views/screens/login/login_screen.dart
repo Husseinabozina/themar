@@ -111,7 +111,8 @@ class LoginScreen extends StatelessWidget {
                                     style: AppTheme.Font15Text3BoldStyle(),
                                   ),
                                   onPressed: () {
-                                    cubit.login(context);
+                                    GoRouter.of(context)
+                                        .push(AppRoutes.homeScreen);
                                   },
                                 ),
                               ]));

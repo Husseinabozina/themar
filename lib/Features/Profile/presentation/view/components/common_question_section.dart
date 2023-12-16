@@ -35,7 +35,10 @@ class QuestionSection extends StatelessWidget {
           const Divider(
             thickness: 0.2,
           ),
-          const ProfileCategory(
+          ProfileCategory(
+            onTap: () {
+              GoRouter.of(context).push(AppRoutes.policyPage);
+            },
             title: "سياسة الخصوصية",
             imageIcon: AppImages.check,
           ),

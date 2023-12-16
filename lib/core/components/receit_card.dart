@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +12,6 @@ class ReceiptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: isOrdered ? 148.h : 111.h,
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
       width: double.infinity,
       decoration: BoxDecoration(
@@ -48,15 +48,15 @@ class ReceiptCard extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
-            height: 10.h,
+          const Space(
+            height: 10,
           ),
-          Divider(
-            height: 3.h,
-            color: const Color(0xFFE2E2E2),
+          const Divider(
+            height: 3,
+            color: Color(0xFFE2E2E2),
           ),
-          SizedBox(
-            height: 5.h,
+          const Space(
+            height: 5,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,8 +81,8 @@ class ReceiptCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 16.h,
-                  width: 51.w,
+                  padding: EdgeInsets.only(
+                      left: 17.w, right: 9.w, top: 9.h, bottom: 13.h),
                   decoration: const BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.fill, image: AssetImage(AppImages.visa))),

@@ -84,28 +84,31 @@ class ProfileHeader extends StatelessWidget {
                     shape: BoxShape.circle),
               )),
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'حسابي',
-                  style: AppTheme.Font20Text3BoldStyle(),
-                ),
-                const Space(height: 20),
-                ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: Image.asset(AppImages.map)),
-                Text(
-                  'محمد علي',
-                  style: AppTheme.Font14Text3BoldStyle(),
-                ),
-                const Space(height: 2),
-                Text(
-                  '+34345453345',
-                  style: AppTheme.Font14Text2NormalStyle()!
-                      .copyWith(color: AppTheme.colorPrimarylight),
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'حسابي',
+                    style: AppTheme.Font20Text3BoldStyle(),
+                  ),
+                  const Space(height: 20),
+                  ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset(AppImages.map)),
+                  Text(
+                    'محمد علي',
+                    style: AppTheme.Font14Text3BoldStyle(),
+                  ),
+                  const Space(height: 2),
+                  Text(
+                    '+34345453345',
+                    style: AppTheme.Font14Text2NormalStyle()!
+                        .copyWith(color: AppTheme.colorPrimarylight),
+                  ),
+                ],
+              ),
             ),
           )
         ],

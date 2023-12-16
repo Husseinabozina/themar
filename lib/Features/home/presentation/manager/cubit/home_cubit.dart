@@ -18,11 +18,11 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
 
   List<Widget> get clientPages => [
-        const HomePage(),
-        const OrdersPage(),
-        const NotificationPage(),
-        const FavoritePage(),
         const ProfilePage(),
+        const FavoritePage(),
+        const NotificationPage(),
+        const OrdersPage(),
+        const HomePage(),
       ];
   List<Widget> get deliveryPages => [
         const DeliveryProfilePage(),
@@ -110,7 +110,7 @@ class HomeCubit extends Cubit<HomeState> {
         ),
       ];
   Widget getCurrentPage() {
-    return deliveryPages[currentIndex];
+    return clientPages[currentIndex];
   }
 
   void onNavBarTap(int index) {

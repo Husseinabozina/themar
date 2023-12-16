@@ -10,24 +10,31 @@ class SuggestionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomNamedAppBar(name: 'الاقتراحات والشكاوي'),
-        const Space(height: 47),
-        const SizedBox(height: 55, child: customTextField(hintText: 'الاسم')),
-        const Space(height: 10),
-        const SizedBox(height: 55, child: customTextField(hintText: 'الاسم')),
-        const customTextField(
-          hintText: 'الموضوع',
-          maxlines: 3,
-        ),
-        CustomButton(
-            title: Text(
-              'إرسال',
-              style: AppTheme.Font15Text3BoldStyle(),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            const CustomNamedAppBar(name: 'الاقتراحات والشكاوي'),
+            const Space(height: 47),
+            const SizedBox(
+                height: 55, child: customTextField(hintText: 'الاسم')),
+            const Space(height: 10),
+            const SizedBox(
+                height: 55, child: customTextField(hintText: 'الاسم')),
+            const customTextField(
+              hintText: 'الموضوع',
+              maxlines: 3,
             ),
-            onPressed: () {})
-      ],
+            CustomButton(
+                title: Text(
+                  'إرسال',
+                  style: AppTheme.Font15Text3BoldStyle(),
+                ),
+                onPressed: () {})
+          ],
+        ),
+      ),
     );
   }
 }

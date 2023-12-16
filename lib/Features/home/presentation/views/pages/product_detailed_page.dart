@@ -15,66 +15,82 @@ class ProductDetailedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:
-          ProductDetailedBottomNav(ctx: context, product: product),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const ProductImagesViews(),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
+        bottomNavigationBar:
+            ProductDetailedBottomNav(ctx: context, product: product),
+        body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  AmountSection(product: product),
-                  SizedBox(
-                    height: 39.h,
+                  const ProductImagesViews(),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        AmountSection(product: product),
+                        SizedBox(
+                          height: 39.h,
+                        ),
+                        Text(
+                          'كود المنتج',
+                          style: AppTheme.Font17PrimaryBoldStyle(),
+                        ),
+                        SizedBox(
+                          height: 16.h,
+                        ),
+                        Text(
+                          '''هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                      ''',
+                          textDirection: TextDirection.rtl,
+                          style: AppTheme.Font14Text2LightStyle(),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'عرض الكل',
+                              style: AppTheme.Font15PrimaryLightStyle(),
+                            ),
+                            Text(
+                              'التقييمات',
+                              style: AppTheme.Font17PrimaryBoldStyle(),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                  Text(
-                    'كود المنتج',
-                    style: AppTheme.Font17PrimaryBoldStyle(),
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  Text(
-                    '''هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                  ''',
-                    textDirection: TextDirection.rtl,
-                    style: AppTheme.Font14Text2LightStyle(),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'عرض الكل',
-                        style: AppTheme.Font15PrimaryLightStyle(),
-                      ),
-                      Text(
-                        'التقييمات',
-                        style: AppTheme.Font17PrimaryBoldStyle(),
-                      )
-                    ],
-                  )
                 ],
               ),
             ),
-            const SizedBox(
-              height: 87,
-              child: RatingListView(),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 87,
+                child: RatingListView(),
+              ),
             ),
-            Text(
-              'منتجات مشابهة',
-              style: AppTheme.Font17PrimaryBoldStyle(),
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            SimilarProductsListView(product: product)
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    'منتجات مشابهة',
+                    style: AppTheme.Font17PrimaryBoldStyle(),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  SimilarProductsListView(
+                      product: ProductModel(
+                          name: 'طماطم',
+                          priceAfter: 20,
+                          priceBefore: 25,
+                          id: '4'))
+                ],
+              ),
+            )
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

@@ -16,11 +16,11 @@ class WalletPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(children: [
-          const CustomNamedAppBar(name: 'المحفظة'),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(children: [
+            const CustomNamedAppBar(name: 'المحفظة'),
+            Column(
               children: [
                 const SizedBox(
                   height: 33,
@@ -60,9 +60,9 @@ class WalletPage extends StatelessWidget {
                 const SizedBox(height: 20),
                 const PayedOrderItem(),
               ],
-            ),
-          )
-        ]),
+            )
+          ]),
+        ),
       ),
     );
   }

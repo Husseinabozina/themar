@@ -33,9 +33,21 @@ class LoginCubit extends Cubit<LoginState> {
   login(BuildContext context) {
     if (loginFormKey.currentState!.validate()) {
       emit(LoginSuccess());
-      GoRouter.of(context).push(AppRoutes.homePage);
+      // disposeAndClear();
+      GoRouter.of(context).push(AppRoutes.homeScreen);
     } else {
       emit(LoginFailure());
     }
+  }
+
+  signOUt(context) {
+    GoRouter.of(context).push(AppRoutes.loginPage);
+  }
+
+  disposeAndClear() {
+    phoneNumberController.clear();
+    passwordController.clear();
+
+    emit(LoginInitial());
   }
 }

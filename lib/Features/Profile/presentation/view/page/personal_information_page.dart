@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
+import 'package:themar_app/Features/auth/views/components/auth_form_field.dart';
+import 'package:themar_app/Features/auth/views/components/phone_number_field.dart';
+import 'package:themar_app/const.dart';
+import 'package:themar_app/core/components/custom_button.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/components/custom_appbar.dart';
@@ -12,93 +16,79 @@ class PersonalInfoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const CustomNamedAppBar(
-            name: 'البيانات الشخصية',
-          ),
-          const Space(height: 35),
-          Container(
-            height: 83.h,
-            width: 88.w,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image:
-                    const DecorationImage(image: AssetImage(AppImages.tomato))),
-          ),
-          Text(
-            'محمد علي',
-            style: AppTheme.Font17PrimaryBoldStyle(),
-          ),
-          Text(
-            '+5454844534',
-            style: AppTheme.Font17Text2BoldStyle(),
-          ),
-          AuthFormField1(
-              label: 'label',
-              icon: SvgPicture.asset(AppImages.profile),
-              valueKey: 34)
-        ],
-      ),
-    );
-  }
-}
-
-class AuthFormField1 extends StatelessWidget {
-  const AuthFormField1(
-      {super.key,
-      required this.label,
-      required this.icon,
-      this.isEnabled,
-      required this.valueKey});
-  final String label;
-  final Widget icon;
-  final bool? isEnabled;
-  final int valueKey;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60.h,
-      child: TextFormField(
-          key: ValueKey(valueKey),
-          enabled: isEnabled ?? true,
-          cursorColor: AppTheme.colorPrimary,
-          textDirection: TextDirection.rtl,
-          decoration: InputDecoration(
-            label: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Expanded(child: Text(label)),
-                      Expanded(child: Text(label)),
-                    ],
-                  ),
-                ),
-              ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            const CustomNamedAppBar(
+              name: 'البيانات الشخصية',
             ),
-            floatingLabelAlignment: FloatingLabelAlignment.start,
-            alignLabelWithHint: true,
-            floatingLabelStyle: const TextStyle(color: AppTheme.colorPrimary),
-            suffixIcon:
-                Padding(padding: const EdgeInsets.only(right: 10), child: icon),
-            suffixIconConstraints: const BoxConstraints(),
-            contentPadding: const EdgeInsets.all(20),
-            focusColor: AppTheme.colorPrimary,
-            focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                    strokeAlign: BorderSide.strokeAlignCenter,
-                    width: 0.5,
-                    color: AppTheme.colorPrimary),
-                borderRadius: BorderRadius.circular(10)),
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 0.5, color: Colors.grey.shade400),
-                borderRadius: BorderRadius.circular(10)),
-          )),
+            const Space(height: 35),
+            Container(
+              height: 83.h,
+              width: 88.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  image: const DecorationImage(
+                      image: AssetImage(AppImages.tomato))),
+            ),
+            Text(
+              'محمد علي',
+              style: AppTheme.Font17PrimaryBoldStyle(),
+            ),
+            Text(
+              '+5454844534',
+              style: AppTheme.Font17Text2BoldStyle(),
+            ),
+            SizedBox(height: 20),
+            AuthFormField(
+              valueKey: 4,
+              label: usernameText,
+              icon: SvgPicture.asset(
+                AppImages.user_grey,
+                height: 25.h,
+                width: 25.w,
+              ),
+            ),
+            SizedBox(height: 20),
+            PhoneNumberField(),
+            SizedBox(height: 20),
+            AuthFormField(
+              valueKey: 3,
+              label: cityText,
+              icon: SvgPicture.asset(
+                AppImages.flag_grey,
+                height: 25.h,
+                width: 25.w,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            AuthFormField(
+              valueKey: 5,
+              label: passwordText,
+              icon: SvgPicture.asset(
+                AppImages.unlock,
+                height: 25.h,
+                width: 25.w,
+              ),
+            ),
+            const Expanded(
+              child: SizedBox(),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: CustomButton(
+                  title: Text(
+                    'تعديل البيانات',
+                    style: AppTheme.Font15Text3BoldStyle(),
+                  ),
+                  onPressed: () {}),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
