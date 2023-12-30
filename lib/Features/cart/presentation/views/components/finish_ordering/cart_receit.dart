@@ -10,7 +10,6 @@ class CartReceiptCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 139.h,
       padding: const EdgeInsets.all(12),
       width: double.infinity,
       decoration: BoxDecoration(

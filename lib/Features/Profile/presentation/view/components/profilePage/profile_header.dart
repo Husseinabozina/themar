@@ -53,7 +53,7 @@ class ProfileHeader extends StatelessWidget {
               )),
           Positioned(
               left: 0,
-              bottom: -60,
+              bottom: -30,
               child: Container(
                 height: 160.h,
                 width: 171.w,
@@ -96,7 +96,13 @@ class ProfileHeader extends StatelessWidget {
                   const Space(height: 20),
                   ClipRRect(
                       borderRadius: BorderRadius.circular(15),
-                      child: Image.asset(AppImages.map)),
+                      child: SizedBox(
+                        height: 76,
+                        width: 71,
+                        child: Image.asset(
+                          AppImages.user_profile,
+                        ),
+                      )),
                   Text(
                     'محمد علي',
                     style: AppTheme.Font14Text3BoldStyle(),

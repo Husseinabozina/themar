@@ -128,8 +128,8 @@ class SimilarProductCard extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: AppTheme.FontWeightBold,
                                           fontSize: AppTheme.font13,
-                                          color: Color.fromARGB(
-                                              255, 26, 29, 23)),
+                                          color:
+                                              Color.fromARGB(255, 26, 29, 23)),
                                     ),
                                   ),
                                   FittedBox(
@@ -139,8 +139,8 @@ class SimilarProductCard extends StatelessWidget {
                                       style: const TextStyle(
                                           fontWeight: AppTheme.FontWeightBold,
                                           fontSize: AppTheme.font13,
-                                          color: Color.fromARGB(
-                                              255, 26, 29, 23)),
+                                          color:
+                                              Color.fromARGB(255, 26, 29, 23)),
                                     ),
                                   ),
                                 ],

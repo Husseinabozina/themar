@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/addressPage/address_card.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
+import 'package:themar_app/Features/home/presentation/manager/ProductCubit/cubit/products_cubit.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/home/categories_listview_section.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/home/home_page_appBar.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/products_grid_view.dart';
@@ -9,6 +10,7 @@ import 'package:themar_app/Features/wallet/presentation/view/components/wallet_b
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,73 +19,85 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            HomePageAppBar(showingButtonSheet: showbottomsheet, ctx: context),
-            const SizedBox(
-              height: 20,
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: SearchTextField(),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            SizedBox(
-              height: 164.h,
-              width: double.infinity,
-              child: DecoratedBox(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(AppImages.groupHome))),
-                child: Center(
-                  child: Text(
-                    'عروض دائمة',
-                    style: AppTheme.Font15Text3BoldStyle(),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: BlocConsumer<ProductsCubit, ProductsState>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            if (state is CategoriesSuccess) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    'عرض الكل',
-                    style: AppTheme.Font15PrimaryLightStyle(),
+                  HomePageAppBar(
+                      showingButtonSheet: showbottomsheet, ctx: context),
+                  const SizedBox(
+                    height: 20,
                   ),
-                  Text(
-                    "الأقسام",
-                    style: AppTheme.Font15Text1ExtraBoldStyle(),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: SearchTextField(),
                   ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  SizedBox(
+                    height: 164.h,
+                    width: double.infinity,
+                    child: DecoratedBox(
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(AppImages.groupHome))),
+                      child: Center(
+                        child: Text(
+                          'عروض دائمة',
+                          style: AppTheme.Font15Text3BoldStyle(),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'عرض الكل',
+                          style: AppTheme.Font15PrimaryLightStyle(),
+                        ),
+                        Text(
+                          "الأقسام",
+                          style: AppTheme.Font15Text1ExtraBoldStyle(),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  const CategoriesListViewSection(),
+                  Padding(
+                    padding: EdgeInsets.only(right: 20.w),
+                    child: Text(
+                      'الأصناف',
+                      style: AppTheme.Font15Text1ExtraBoldStyle(),
+                      textAlign: TextAlign.end,
+                    ),
+                  ),
+                  Space(height: 20.h),
+                  const ProductCardsGridView(
+                    itemCount: 4,
+                    aspectRacio: 1 / 1.5,
+                  )
                 ],
-              ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            const CategoriesListViewSection(),
-            Padding(
-              padding: EdgeInsets.only(right: 20.w),
-              child: Text(
-                'الأصناف',
-                style: AppTheme.Font15Text1ExtraBoldStyle(),
-                textAlign: TextAlign.end,
-              ),
-            ),
-            Space(height: 20.h),
-            const ProductCardsGridView(
-              itemCount: 4,
-              aspectRacio: 1 / 1.5,
-            )
-          ],
+              );
+            } else if (state is CategoriesFailure) {
+              return const Center(child: Text(' error '));
+            } else {
+              return const CircularProgressIndicator();
+            }
+          },
         ),
       ),
     );

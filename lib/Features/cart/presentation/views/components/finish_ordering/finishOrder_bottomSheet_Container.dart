@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
-import 'package:themar_app/Features/home/presentation/manager/cubit/home_cubit.dart';
+import 'package:themar_app/Features/home/presentation/manager/HomeCubit/home_cubit.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/product_detailed/product_view_navbar.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
@@ -59,7 +59,7 @@ class FinishOrderButtomSheetContainer extends StatelessWidget {
               child: BottomNavBottun(
                   color: AppTheme.colorPrimary,
                   onPressed: () {
-                    BlocProvider.of<HomeCubit>(context).onNavigateTohome(1);
+                    BlocProvider.of<HomeCubit>(context).onNavigateTohome(3);
                     GoRouter.of(context).push(AppRoutes.homeScreen);
                   },
                   title: Text(

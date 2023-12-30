@@ -149,7 +149,8 @@ class ProductDetailedBottomNav extends StatelessWidget {
         width: double.infinity,
         color: AppTheme.colorPrimary,
         child: Padding(
-          padding: const EdgeInsets.only(right: 25, left: 20, top: 10, bottom: 10).r,
+          padding:
+              const EdgeInsets.only(right: 25, left: 20, top: 10, bottom: 10).r,
           child: Row(
             children: [
               Text(

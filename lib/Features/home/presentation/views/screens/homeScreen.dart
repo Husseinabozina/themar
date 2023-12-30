@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/home/presentation/manager/cubit/home_cubit.dart';
+import 'package:themar_app/Features/home/presentation/manager/HomeCubit/home_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/home/custom_nav_bar.dart';
 

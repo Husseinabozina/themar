@@ -209,8 +209,7 @@ class _PinScreenState extends State<PinScreen> {
                             Space(height: 45),
                             InkWell(
                               onTap: () {
-                                GoRouter.of(context)
-                                    .push(AppRoutes.registerScreen);
+                                GoRouter.of(context).push(AppRoutes.loginPage);
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,

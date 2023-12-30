@@ -70,4 +70,5 @@ class AppImages {
   static const String bank_building = "assets/icons/bank_building.svg";
   static const String car = "assets/icons/car.svg";
   static const String save_money = "assets/icons/save-money.svg";
+  static const String user_profile = "assets/user_profile.png";
 }

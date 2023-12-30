@@ -14,12 +14,10 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: ()
-       {
+      onTap: () {
         GoRouter.of(context)
             .push(AppRoutes.productDetailedPage, extra: product);
-      }
-      ,
+      },
       child: SizedBox(
         child: DecoratedBox(
           decoration: BoxDecoration(

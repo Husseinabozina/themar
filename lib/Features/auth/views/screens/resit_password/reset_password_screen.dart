@@ -78,8 +78,7 @@ class ResetPasswordScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                GoRouter.of(context)
-                                    .push(AppRoutes.registerScreen);
+                                GoRouter.of(context).push(AppRoutes.loginPage);
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,

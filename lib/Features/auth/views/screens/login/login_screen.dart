@@ -13,10 +13,12 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+  LoginScreen({super.key = const Key('ddfvalue')});
 
   String loginText = 'تسجيل الدخول';
   String haveAccountText = 'لديك حساب بالفعل';
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +36,6 @@ class LoginScreen extends StatelessWidget {
                       AppImages.logo,
                       height: 0.1584.sh,
                       width: 0.3461.sw,
-                      // width: 129.83.w,
-                      // height: 125.72.h,
                     ),
                   ),
                   const SizedBox(
@@ -62,11 +62,12 @@ class LoginScreen extends StatelessWidget {
                         height: 10,
                       ),
                       BlocConsumer<LoginCubit, LoginState>(
+                        key: Key('value'),
                         listener: (context, state) {},
                         builder: (context, state) {
                           final cubit = LoginCubit.get(context);
                           return Form(
-                              key: cubit.loginFormKey,
+                              key: _formKey,
                               child: Column(children: [
                                 PhoneNumberField(
                                   contorller: cubit.phoneNumberController,
@@ -125,8 +126,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      GoRouter.of(context)
-                          .push(AppRoutes.deliverRegisterScreen);
+                      GoRouter.of(context).push(AppRoutes.registerScreen);
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,

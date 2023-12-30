@@ -170,7 +170,9 @@ class RegisterScreen extends StatelessWidget {
                     height: 50.h,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      GoRouter.of(context).push(AppRoutes.loginPage);
+                    },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -195,91 +197,3 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// AnimatedContainer(
-//                           height: _authMode == AuthMode.signUp
-//                               ? maxHeight
-//                               : minHeight,
-//                           curve: Curves.ease,
-//                           duration: const Duration(milliseconds: 1000),
-//                           constraints: BoxConstraints(
-//                               maxHeight: maxHeight, minHeight: minHeight),
-//                           child: SingleChildScrollView(
-//                             child: Container(
-//                               constraints: const BoxConstraints(maxHeight: 76),
-//                               child: Column(
-//                                 children: [
-//                                   AuthFormField(
-//                                     valueKey: 4,
-//                                     isEnabled: _authMode == AuthMode.signUp,
-//                                     label: "اسم المستخدم",
-//                                     icon: SvgPicture.asset(
-//                                       AppImages.unlock,
-//                                       height: 25.h,
-//                                       width: 25.w,
-//                                     ),
-//                                   ),
-//                                   const SizedBox(
-//                                     height: 10,
-//                                   ),
-//                                 ],
-//                               ),
-//                             ),
-//                           ),
-//                         )
-
-//   المدينة
-//                         AnimatedContainer(
-//                           height: _authMode == AuthMode.signUp
-//                               ? maxHeight
-//                               : minHeight,
-//                           curve: Curves.ease,
-//                           duration: const Duration(milliseconds: 1000),
-//                           constraints: BoxConstraints(
-//                               maxHeight: maxHeight, minHeight: minHeight),
-//                           child: SingleChildScrollView(
-//                             child: FadeTransition(
-//                               opacity: animation,
-//                               child: Column(
-//                                 mainAxisSize: MainAxisSize.min,
-//                                 children: [
-//                                   AuthFormField(
-//                                     valueKey: 3,
-//                                     isEnabled: _authMode == AuthMode.signUp,
-//                                     label: "المدينة",
-//                                     icon: SvgPicture.asset(
-//                                       AppImages.unlock,
-//                                       height: 25.h,
-//                                       width: 25.w,
-//                                     ),
-//                                   ),
-//                                   const SizedBox(
-//                                     height: 10,
-//                                   ),
-//                                 ],
-//                               ),
-//                             ),
-//                           ),
-//                         )

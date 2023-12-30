@@ -10,6 +10,7 @@ import 'package:themar_app/Features/Profile/presentation/view/page/personal_info
 import 'package:themar_app/Features/Profile/presentation/view/page/privacy_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/profile_page.dart';
 import 'package:themar_app/Features/Profile/presentation/view/page/question_page.dart';
+import 'package:themar_app/Features/auth/views/manager/cubit/login/login_cubit.dart';
 import 'package:themar_app/Features/auth/views/screens/registeration/active_pin_screen.dart';
 import 'package:themar_app/Features/auth/views/screens/registeration/delivery_registeration_screen.dart';
 import 'package:themar_app/Features/auth/views/screens/registeration/register_screen.dart';
@@ -23,7 +24,7 @@ import 'package:themar_app/Features/orders/presentation/views/pages/orders_page.
 import 'package:themar_app/Features/wallet/presentation/view/page/charging_page.dart';
 import 'package:themar_app/Features/wallet/presentation/view/page/wallet_page.dart';
 import 'package:themar_app/Features/auth/views/screens/login/login_screen.dart';
-import 'package:themar_app/Features/cart/presentation/views/pages/finish_odering_page.dart';
+import 'package:themar_app/Features/cart/presentation/views/pages/finish_oder_page.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/Features/cart/presentation/views/pages/cart_page.dart';
 import 'package:themar_app/Features/home/presentation/views/pages/category_detailed_page.dart';
@@ -32,8 +33,10 @@ import 'package:themar_app/Features/home/presentation/views/pages/product_detail
 import 'package:themar_app/Features/home/presentation/views/screens/homeScreen.dart';
 import 'package:themar_app/Features/orders/presentation/views/pages/order_detailed_page.dart';
 import 'package:themar_app/Features/splash/views/widgets/splash_page.dart';
+import 'package:themar_app/core/di/service_locator.dart';
 
 import '../../Features/wallet/presentation/view/page/transication_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRoutes {
   static const homePage = '/homePage';
@@ -76,7 +79,10 @@ class AppRoutes {
     ),
     GoRoute(
       path: loginPage,
-      builder: (context, state) => LoginScreen(),
+      builder: (context, state) => BlocProvider(
+        create: (context) => getIt.get<LoginCubit>(),
+        child: LoginScreen(),
+      ),
     ),
     GoRoute(
       path: homeScreen,
