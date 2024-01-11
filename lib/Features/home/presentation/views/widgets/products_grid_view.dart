@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/home/data/models/product_model.dart';
+import 'package:themar_app/Features/home/data/models/product.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/product_card.dart';
 
 class ProductCardsGridView extends StatelessWidget {
   const ProductCardsGridView(
-      {super.key, required this.itemCount, required this.aspectRacio});
+      {super.key,
+      required this.itemCount,
+      required this.aspectRacio,
+      required this.products});
+  final List<Product> products;
   final int itemCount;
 
   final double aspectRacio;
@@ -14,7 +18,7 @@ class ProductCardsGridView extends StatelessWidget {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: itemCount,
+      itemCount: products.length,
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: aspectRacio,
@@ -23,8 +27,7 @@ class ProductCardsGridView extends StatelessWidget {
           crossAxisSpacing: 5),
       itemBuilder: (context, index) => ProductCard(
         aspectRation: aspectRacio,
-        product: ProductModel(
-            name: 'طماطم', priceAfter: 45, priceBefore: 56, id: '125463'),
+        product: products[index],
       ),
     );
   }

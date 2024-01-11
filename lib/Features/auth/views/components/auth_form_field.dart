@@ -11,7 +11,9 @@ class AuthFormField extends StatelessWidget {
       this.valueKey,
       this.controller,
       this.validator,
-      this.suffixIcon});
+      this.suffixIcon,
+      this.onChange,
+      this.isReadOnly});
   final String label;
   final Widget icon;
   final bool? isEnabled;
@@ -19,12 +21,15 @@ class AuthFormField extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final Widget? suffixIcon;
+  final Function(String value)? onChange;
+  final bool? isReadOnly;
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: TextFormField(
+          readOnly: isReadOnly ?? false,
           textAlign: TextAlign.right,
           validator: validator,
           controller: controller ?? null,

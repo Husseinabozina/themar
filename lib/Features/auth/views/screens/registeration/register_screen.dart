@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_google_places/flutter_google_places.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:themar_app/Features/aditional/data/models/iqLocation_model/iqlocaiton_model.dart';
+import 'package:themar_app/Features/aditional/manager/cubit/additional_cubit.dart';
+import 'package:themar_app/Features/aditional/view/components.dart';
 import 'package:themar_app/Features/auth/views/components/auth_form_field.dart';
 import 'package:themar_app/Features/auth/views/components/group_widget.dart';
 import 'package:themar_app/Features/auth/views/components/phone_number_field.dart';
 import 'package:themar_app/Features/auth/views/manager/cubit/registeration/register_cubit.dart';
 import 'package:themar_app/Features/auth/views/screens/login/login_screen.dart';
+import 'package:themar_app/Features/search/presentation/manager/cubit/search_cubit.dart';
+import 'package:themar_app/const.dart';
+import 'package:themar_app/core/Networking/api/api_const.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
@@ -13,8 +20,18 @@ import 'package:themar_app/core/components/custom_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
+
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +74,18 @@ class RegisterScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(
-                            'مرحبا بك مرة أخري ',
-                            textAlign: TextAlign.end,
-                            style: AppTheme.Font16PrimaryBoldStyle(),
+                          GestureDetector(
+                            onTap: () {
+                              print(context
+                                  .read<AdditionalCubit>()
+                                  .cities
+                                  .length);
+                            },
+                            child: Text(
+                              'مرحبا بك مرة أخري ',
+                              textAlign: TextAlign.end,
+                              style: AppTheme.Font16PrimaryBoldStyle(),
+                            ),
                           ),
                           SizedBox(
                             height: 8.h,
@@ -93,17 +118,7 @@ class RegisterScreen extends StatelessWidget {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                AuthFormField(
-                                  validator: (_) => cubit.validateCity(),
-                                  controller: cubit.cityController,
-                                  valueKey: 3,
-                                  label: cityText,
-                                  icon: SvgPicture.asset(
-                                    AppImages.unlock,
-                                    height: 25.h,
-                                    width: 25.w,
-                                  ),
-                                ),
+                                const CitiesTextFormField(),
                                 const SizedBox(
                                   height: 20,
                                 ),
@@ -171,7 +186,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      GoRouter.of(context).push(AppRoutes.loginPage);
+                      GoRouter.of(context).pop();
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -194,6 +209,77 @@ class RegisterScreen extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class CitiesTextFormField extends StatefulWidget {
+  const CitiesTextFormField({super.key});
+
+  @override
+  State<CitiesTextFormField> createState() => CitiesTextFormFieldState();
+}
+
+class CitiesTextFormFieldState extends State<CitiesTextFormField> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AdditionalCubit, AdditionalState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            AuthFormField(
+              isReadOnly: true,
+              suffixIcon: DropdownButton(
+                onChanged: (newValue) {
+                  context.read<RegisterCubit>().assignCityController(newValue);
+                  print('e');
+                },
+                items: List.generate(
+                    context.read<AdditionalCubit>().cities.length,
+                    (index) => DropdownMenuItem(
+                        value: context
+                            .read<AdditionalCubit>()
+                            .cities[index]
+                            .cityName,
+                        child: Text(context
+                            .read<AdditionalCubit>()
+                            .cities[index]
+                            .cityName))),
+              ),
+              validator: (_) => context.read<RegisterCubit>().validateCity(),
+              controller: context.read<RegisterCubit>().cityController,
+              valueKey: 3,
+              label: cityText,
+              icon: SvgPicture.asset(
+                AppImages.unlock,
+                height: 25.h,
+                width: 25.w,
+              ),
+            ),
+            // Stack(
+            //   children: [
+            //     ListView.builder(
+            //         shrinkWrap: true,
+            //         itemCount: locations.length,
+            //         itemBuilder: (context, index) =>
+            //             LocationListTile(
+            //               location: context
+            //                   .read<
+            //                       AdditionalCubit>()
+            //                   .cities[index]
+            //                   .cityName,
+            //               press: () {},
+            //             ))
+            //   ],
+            // )
+          ],
+        );
+      },
     );
   }
 }

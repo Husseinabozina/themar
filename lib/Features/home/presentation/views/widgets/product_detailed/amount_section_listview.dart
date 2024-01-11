@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themar_app/Features/home/data/models/product.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/Features/home/presentation/views/utils/enums.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/change_amount_button.dart';
@@ -11,7 +12,7 @@ class AmountSection extends StatelessWidget {
     required this.product,
   });
 
-  final ProductModel product;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class AmountSection extends StatelessWidget {
                   decorationColor: AppTheme.colorPrimary),
             ),
             Text(
-              product.priceAfter.toString(),
+              product.price.toString(),
               textDirection: TextDirection.rtl,
               style: const TextStyle(
                   color: AppTheme.colorPrimary,
@@ -45,7 +46,7 @@ class AmountSection extends StatelessWidget {
               style: AppTheme.Font16PrimaryBoldStyle(),
             ),
             Text(
-              product.priceAfter.toString(),
+              product.price.toString(),
               style: AppTheme.Font16PrimaryBoldStyle(),
             ),
             SizedBox(
@@ -58,7 +59,7 @@ class AmountSection extends StatelessWidget {
 
             Expanded(
               child: Text(
-                product.name,
+                product.title!,
                 textAlign: TextAlign.end,
                 style: AppTheme.Font22PrimaryBoldStyle(),
               ),
@@ -85,7 +86,7 @@ class AmountSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                product.id!,
+                product.id!.toString(),
                 style: AppTheme.Font19Text2LightStyle(),
               ),
               SizedBox(

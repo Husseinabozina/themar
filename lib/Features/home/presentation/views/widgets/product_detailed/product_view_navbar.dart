@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:themar_app/Features/home/data/models/product.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
@@ -9,7 +10,7 @@ import 'package:go_router/go_router.dart';
 class ProductDetailedBottomNav extends StatelessWidget {
   const ProductDetailedBottomNav(
       {super.key, required this.product, required this.ctx});
-  final ProductModel product;
+  final Product product;
   final BuildContext ctx;
   final String addToCardText = 'التحويل الي السلة';
   final String moreOffersText = 'تصفح العروض';
@@ -64,7 +65,7 @@ class ProductDetailedBottomNav extends StatelessWidget {
                           Column(
                             children: [
                               Text(
-                                product.name,
+                                product.title!,
                                 style: AppTheme.Font12PrimaryMediumStyle(),
                               ),
                               Row(

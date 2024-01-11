@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/home/data/models/product_model.dart';
+import 'package:provider/provider.dart';
+import 'package:themar_app/Features/home/data/models/product.dart';
+import 'package:themar_app/Features/home/presentation/manager/ProductCubit/cubit/products_cubit.dart';
+import 'package:themar_app/Features/home/presentation/views/widgets/product_detailed/image_card.dart';
 import 'package:themar_app/core/config/App_routes.dart';
-import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -10,9 +12,10 @@ class ProductCard extends StatelessWidget {
   const ProductCard(
       {super.key, required this.aspectRation, required this.product});
   final double aspectRation;
-  final ProductModel product;
+  final Product product;
   @override
   Widget build(BuildContext context) {
+    final products = context.read<ProductsCubit>().products;
     return GestureDetector(
       onTap: () {
         GoRouter.of(context)
@@ -39,7 +42,7 @@ class ProductCard extends StatelessWidget {
                         Stack(
                           clipBehavior: Clip.none,
                           children: [
-                            imageCard(),
+                            imageCard(product.mainImage),
                             Positioned(
                               left: 0,
                               top: 0,
@@ -63,7 +66,7 @@ class ProductCard extends StatelessWidget {
                           ],
                         ),
                         Text(
-                          product.name,
+                          product.title ?? "",
                           style: AppTheme.Font16PrimaryBoldStyle(),
                         ),
                         Text(
@@ -92,7 +95,7 @@ class ProductCard extends StatelessWidget {
                                 FittedBox(
                                   fit: BoxFit.fill,
                                   child: Text(
-                                    product.priceBefore.toString(),
+                                    product.price.toString(),
                                     textDirection: TextDirection.rtl,
                                     style: TextStyle(
                                         color: AppTheme.colorPrimary,
@@ -116,7 +119,7 @@ class ProductCard extends StatelessWidget {
                                 FittedBox(
                                   fit: BoxFit.fill,
                                   child: Text(
-                                    product.priceBefore.toString(),
+                                    product.priceBeforeDiscount.toString(),
                                     style: AppTheme.Font16PrimaryBoldStyle(),
                                   ),
                                 ),
@@ -151,18 +154,6 @@ class ProductCard extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Widget imageCard() {
-    return SizedBox(
-      height: 117.h,
-      width: 145.w,
-      child: DecoratedBox(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(11),
-              image: const DecorationImage(
-                  fit: BoxFit.fill, image: AssetImage(AppImages.tomato)))),
     );
   }
 

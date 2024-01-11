@@ -1,12 +1,17 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:themar_app/Features/Profile/presentation/manager/cubit/profile_cubit.dart';
+import 'package:themar_app/Features/aditional/manager/cubit/additional_cubit.dart';
 import 'package:themar_app/Features/auth/views/manager/cubit/login/login_cubit.dart';
 import 'package:themar_app/Features/auth/views/manager/cubit/registeration/register_cubit.dart';
 import 'package:themar_app/Features/home/presentation/manager/HomeCubit/home_cubit.dart';
 import 'package:themar_app/Features/home/presentation/manager/ProductCubit/cubit/products_cubit.dart';
 import 'package:themar_app/Features/orders/presentation/manager/cubit/order_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:themar_app/Features/search/data/search_repo/search_repo_imple.dart';
+import 'package:themar_app/Features/search/presentation/manager/cubit/search_cubit.dart';
+import 'package:themar_app/core/Networking/api/api.dart';
 import 'package:themar_app/core/Networking/services/location_service.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_theme.dart';
@@ -16,8 +21,9 @@ import 'package:themar_app/core/observer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await LocationSercices().locationByCity();
   setUp();
+
+  // await LocationSercices().locationByCity();
   Bloc.observer = const AppBlocObserver();
   runApp(const Directionality(
     textDirection: TextDirection.rtl,
@@ -37,9 +43,11 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           lazy: false,
-          create: (context) => getIt<ProductsCubit>()..getCategories(),
+          create: (context) =>
+              getIt<ProductsCubit>()..getAllCategoriesAnProducts(),
         ),
         BlocProvider(create: (context) => HomeCubit()),
+        BlocProvider(create: (context) => LoginCubit(getIt.get<Api>())),
         BlocProvider(
           create: (context) => OrderCubit(),
         ),
@@ -47,8 +55,16 @@ class MyApp extends StatelessWidget {
           create: (context) => ProfileCubit(),
         ),
         BlocProvider(
-          create: (context) => RegisterCubit(),
+          create: (context) => RegisterCubit(getIt.get<Api>()),
         ),
+        BlocProvider(
+          create: (context) => SearchCubit(SearchRepoImple(ApiImpl(Dio()))),
+        ),
+        BlocProvider(
+            lazy: false,
+            create: (context) => getIt.get<AdditionalCubit>()
+              ..fetchAndDisplayData()
+              ..getCities()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),

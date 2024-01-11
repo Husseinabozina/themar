@@ -17,10 +17,13 @@ import 'package:themar_app/Features/auth/views/screens/registeration/register_sc
 import 'package:themar_app/Features/auth/views/screens/resit_password/new_password.dart';
 import 'package:themar_app/Features/auth/views/screens/resit_password/pin_screen.dart';
 import 'package:themar_app/Features/auth/views/screens/resit_password/reset_password_screen.dart';
+import 'package:themar_app/Features/home/data/models/category.dart';
+import 'package:themar_app/Features/home/data/models/product.dart';
 import 'package:themar_app/Features/home/presentation/views/pages/delivery_order_detailed_page.dart';
 import 'package:themar_app/Features/notification/presentation/page/notifications_page.dart';
 import 'package:themar_app/Features/orders/presentation/views/pages/delivery_orders_page.dart';
 import 'package:themar_app/Features/orders/presentation/views/pages/orders_page.dart';
+import 'package:themar_app/Features/search/presentation/view/pages/search_screen.dart';
 import 'package:themar_app/Features/wallet/presentation/view/page/charging_page.dart';
 import 'package:themar_app/Features/wallet/presentation/view/page/wallet_page.dart';
 import 'package:themar_app/Features/auth/views/screens/login/login_screen.dart';
@@ -71,17 +74,25 @@ class AppRoutes {
   static const deliverRegisterScreen = '/DeliverRegisterScreen';
   static const activatePinPage = '/activatePinPage';
   static const policyPage = '/privacyPage';
+  static const searchScreen = '/searchScreen';
 
-  static final router = GoRouter(routes: [
+  static final router = GoRouter(
+    routes: [
     GoRoute(
+      
       path: '/',
       builder: (context, state) => const SplashScreen(),
     ),
     GoRoute(
       path: loginPage,
+      routes: [
+        
+      ],
       builder: (context, state) => BlocProvider(
         create: (context) => getIt.get<LoginCubit>(),
         child: LoginScreen(),
+        
+      
       ),
     ),
     GoRoute(
@@ -95,12 +106,12 @@ class AppRoutes {
     GoRoute(
       path: categoryDetailedPage,
       builder: (context, state) =>
-          CategoryDetailedPage(name: state.extra! as String),
+          CategoryDetailedPage(category: state.extra! as CategoryModel),
     ),
     GoRoute(
       path: productDetailedPage,
       builder: (context, state) =>
-          ProductDetailedPage(product: state.extra! as ProductModel),
+          ProductDetailedPage(product: state.extra! as Product),
     ),
     GoRoute(
       path: bagCardPage,
@@ -210,6 +221,10 @@ class AppRoutes {
     GoRoute(
       path: policyPage,
       builder: (context, state) => const PolicyPage(),
+    ),
+    GoRoute(
+      path: searchScreen,
+      builder: (context, state) => SearchScreen(),
     ),
   ]);
 }

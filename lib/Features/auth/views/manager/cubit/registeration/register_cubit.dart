@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:regexpattern/regexpattern.dart';
 import 'package:go_router/go_router.dart';
+import 'package:themar_app/Features/auth/data/models/register_request_body.dart';
+import 'package:themar_app/Features/auth/data/repos/auth_repo.dart';
+import 'package:themar_app/core/Networking/api/api.dart';
+import 'package:themar_app/core/Networking/api/api_const.dart';
+import 'package:themar_app/core/Networking/api_service.dart';
+import 'package:themar_app/core/Networking/services/location_service.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(RegisterInitial());
+  RegisterCubit(this.api) : super(RegisterInitial());
   static RegisterCubit get(BuildContext context) => BlocProvider.of(context);
+  Api api;
+  late AuthRepo authRepo;
 
   final registerFormKey = GlobalKey<FormState>();
   TextEditingController userNameController = TextEditingController();
@@ -64,8 +73,18 @@ class RegisterCubit extends Cubit<RegisterState> {
     }
   }
 
-  register(context) {
+  register(context) async {
     if (registerFormKey.currentState!.validate()) {
+      var city = await LocationServices().locationByCity(cityController.text);
+      await authRepo.register(RegisterRequestBody(
+          userName: userNameController.text,
+          password: passwordController.text,
+          gender: "male",
+          phone: phoneNumberController.text,
+          lat: city['latitude'],
+          lon: city['longitude'],
+          passwordConfirmation: passwordController.text));
+
       emit(RegisterSuccess());
       GoRouter.of(context).push(AppRoutes.activatePinPage);
     } else {
@@ -89,5 +108,10 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   onDoneclick(BuildContext context) {
     GoRouter.of(context).push(AppRoutes.loginPage);
+  }
+
+  void assignCityController(value) {
+    cityController.text = value;
+    emit(SelectCity());
   }
 }

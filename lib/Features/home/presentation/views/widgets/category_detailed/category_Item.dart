@@ -1,6 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:themar_app/Features/home/data/models/category_model.dart';
+import 'package:provider/provider.dart';
+import 'package:themar_app/Features/home/data/models/category.dart';
+import 'package:themar_app/Features/home/presentation/manager/ProductCubit/cubit/products_cubit.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,8 +17,9 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        context.read<ProductsCubit>().getCategoriesProducts(category.id);
         GoRouter.of(context)
-            .push(AppRoutes.categoryDetailedPage, extra: category.label);
+            .push(AppRoutes.categoryDetailedPage, extra: category);
       },
       child: Padding(
         padding: const EdgeInsets.only(left: 12),
@@ -28,19 +32,21 @@ class CategoryItem extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: category.color),
+                      color: AppTheme.colorAlmond),
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: SvgPicture.asset(
-                      category.image,
-                      height: 44.18.h,
-                      width: 44.18.w,
-                    ),
-                  ),
+                      padding: const EdgeInsets.all(20),
+                      child: CachedNetworkImage(imageUrl: category.media ?? '')
+
+                      //  SvgPicture.asset(
+                      //   category.image,
+                      //   height: 44.18.h,
+                      //   width: 44.18.w,
+                      // ),
+                      ),
                 ),
               ),
               Text(
-                category.label,
+                category.name ?? "",
                 style: AppTheme.Font19Text1MediumStyle(),
               )
             ],

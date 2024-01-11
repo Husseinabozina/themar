@@ -13,6 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/components/custom_button.dart';
 import 'package:go_router/go_router.dart';
+import 'package:themar_app/core/extenstions/extenstions.dart';
 
 class PinScreen extends StatefulWidget {
   const PinScreen({super.key});
@@ -209,7 +210,8 @@ class _PinScreenState extends State<PinScreen> {
                             Space(height: 45),
                             InkWell(
                               onTap: () {
-                                GoRouter.of(context).push(AppRoutes.loginPage);
+                                GoRouter.of(context)
+                                    .popUntil(AppRoutes.loginPage);
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,

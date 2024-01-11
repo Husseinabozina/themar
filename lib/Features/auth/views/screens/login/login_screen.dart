@@ -12,12 +12,17 @@ import 'package:themar_app/core/components/custom_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   LoginScreen({super.key = const Key('ddfvalue')});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   String loginText = 'تسجيل الدخول';
+
   String haveAccountText = 'لديك حساب بالفعل';
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -61,13 +66,11 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      BlocConsumer<LoginCubit, LoginState>(
-                        key: Key('value'),
-                        listener: (context, state) {},
+                      BlocBuilder<LoginCubit, LoginState>(
                         builder: (context, state) {
-                          final cubit = LoginCubit.get(context);
+                          final cubit = context.read<LoginCubit>();
                           return Form(
-                              key: _formKey,
+                              key: cubit.loginFormKey,
                               child: Column(children: [
                                 PhoneNumberField(
                                   contorller: cubit.phoneNumberController,
@@ -112,8 +115,9 @@ class LoginScreen extends StatelessWidget {
                                     style: AppTheme.Font15Text3BoldStyle(),
                                   ),
                                   onPressed: () {
-                                    GoRouter.of(context)
-                                        .push(AppRoutes.homeScreen);
+                                    cubit.login(
+                                      context,
+                                    );
                                   },
                                 ),
                               ]));

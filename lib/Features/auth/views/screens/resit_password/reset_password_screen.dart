@@ -9,6 +9,7 @@ import 'package:themar_app/core/config/app_theme.dart';
 import 'package:themar_app/core/components/custom_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:themar_app/core/extenstions/extenstions.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});
@@ -78,7 +79,7 @@ class ResetPasswordScreen extends StatelessWidget {
                             ),
                             InkWell(
                               onTap: () {
-                                GoRouter.of(context).push(AppRoutes.loginPage);
+                                GoRouter.of(context).pop();
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,

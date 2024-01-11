@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themar_app/Features/home/data/models/product.dart';
 import 'package:themar_app/Features/home/data/models/product_model.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/product_detailed/product_Images_views.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/product_detailed/amount_section_listview.dart';
@@ -10,7 +11,7 @@ import 'package:themar_app/core/config/app_theme.dart';
 
 class ProductDetailedPage extends StatelessWidget {
   const ProductDetailedPage({super.key, required this.product});
-  final ProductModel product;
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +34,14 @@ class ProductDetailedPage extends StatelessWidget {
                           height: 39.h,
                         ),
                         Text(
-                          'كود المنتج',
+                          product.code!,
                           style: AppTheme.Font17PrimaryBoldStyle(),
                         ),
                         SizedBox(
                           height: 16.h,
                         ),
                         Text(
-                          '''هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                      ''',
+                          product.description!,
                           textDirection: TextDirection.rtl,
                           style: AppTheme.Font14Text2LightStyle(),
                         ),
@@ -83,7 +83,7 @@ class ProductDetailedPage extends StatelessWidget {
                   ),
                   SimilarProductsListView(
                       product: ProductModel(
-                          name: 'طماطم',
+                          name: product.title!,
                           priceAfter: 20,
                           priceBefore: 25,
                           id: '4'))
