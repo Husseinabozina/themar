@@ -4,6 +4,7 @@ import 'package:themar_app/Features/auth/views/components/auth_form_field.dart';
 import 'package:themar_app/Features/auth/views/components/group_widget.dart';
 import 'package:themar_app/Features/auth/views/components/phone_number_field.dart';
 import 'package:themar_app/Features/auth/views/manager/cubit/login/login_cubit.dart';
+import 'package:themar_app/core/components/showToast.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
@@ -66,7 +67,24 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      BlocBuilder<LoginCubit, LoginState>(
+                      BlocConsumer<LoginCubit, LoginState>(
+                        listener: (context, state) {
+                          if (state is LoginSuccess) {
+                            showToast(
+                                message: ' Login done successfully',
+                                state: ToastStates.success);
+                          } else if (state is LoginFailure) {
+                            showToast(
+                                message: state.message!,
+                                state: ToastStates.error);
+                          } else if (state is LoginLoading) {
+                            const Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.amber,
+                              ),
+                            );
+                          }
+                        },
                         builder: (context, state) {
                           final cubit = context.read<LoginCubit>();
                           return Form(

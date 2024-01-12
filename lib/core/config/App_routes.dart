@@ -76,24 +76,14 @@ class AppRoutes {
   static const policyPage = '/privacyPage';
   static const searchScreen = '/searchScreen';
 
-  static final router = GoRouter(
-    routes: [
+  static final router = GoRouter(routes: [
     GoRoute(
-      
       path: '/',
       builder: (context, state) => const SplashScreen(),
     ),
     GoRoute(
       path: loginPage,
-      routes: [
-        
-      ],
-      builder: (context, state) => BlocProvider(
-        create: (context) => getIt.get<LoginCubit>(),
-        child: LoginScreen(),
-        
-      
-      ),
+      builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
       path: homeScreen,

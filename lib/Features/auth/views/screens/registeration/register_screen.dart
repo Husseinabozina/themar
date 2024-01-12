@@ -12,6 +12,7 @@ import 'package:themar_app/Features/auth/views/screens/login/login_screen.dart';
 import 'package:themar_app/Features/search/presentation/manager/cubit/search_cubit.dart';
 import 'package:themar_app/const.dart';
 import 'package:themar_app/core/Networking/api/api_const.dart';
+import 'package:themar_app/core/components/showToast.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:themar_app/core/config/app_assets.dart';
 import 'package:themar_app/core/config/app_theme.dart';
@@ -66,7 +67,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   BlocConsumer<RegisterCubit, RegisterState>(
                     listener: (context, state) {
-                      // TODO: implement listener
+                      if (state is RegisterSuccess) {
+                        showToast(
+                            message: ' Register done successfully',
+                            state: ToastStates.success);
+                      } else if (state is RegisterFailure) {
+                        showToast(
+                            message: ' Register failed',
+                            state: ToastStates.error);
+                      } else if (state is RegisterLoading) {
+                        const Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.amber,
+                          ),
+                        );
+                      }
                     },
                     builder: (context, state) {
                       final cubit = RegisterCubit.get(context);
@@ -171,7 +186,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 ),
                                 CustomButton(
                                   title: Text(
-                                    'تسجيل الدخول',
+                                    'التسجيل',
                                     style: AppTheme.Font15Text3BoldStyle(),
                                   ),
                                   onPressed: () => cubit.register(context),

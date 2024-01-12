@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:themar_app/Features/Profile/presentation/view/components/personal_info_section.dart';
-import 'package:themar_app/Features/auth/views/components/auth_form_field.dart';
 import 'package:themar_app/Features/auth/views/components/group_widget.dart';
 import 'package:themar_app/Features/auth/views/components/phone_number_field.dart';
 import 'package:themar_app/Features/auth/views/components/registeration/carInfo_form.dart';
@@ -164,7 +162,7 @@ class CustomCard extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           )),
         ),
-        SizedBox(
+        const SizedBox(
           height: 3,
         ),
         Text(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:themar_app/Features/Profile/presentation/manager/cubit/profile_cubit.dart';
 import 'package:themar_app/Features/aditional/manager/cubit/additional_cubit.dart';
+import 'package:themar_app/Features/auth/data/repos/auth_repo.dart';
 import 'package:themar_app/Features/auth/views/manager/cubit/login/login_cubit.dart';
 import 'package:themar_app/Features/auth/views/manager/cubit/registeration/register_cubit.dart';
 import 'package:themar_app/Features/home/presentation/manager/HomeCubit/home_cubit.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
               getIt<ProductsCubit>()..getAllCategoriesAnProducts(),
         ),
         BlocProvider(create: (context) => HomeCubit()),
-        BlocProvider(create: (context) => LoginCubit(getIt.get<Api>())),
+        BlocProvider(create: (context) => LoginCubit(getIt.get<AuthRepo>())),
         BlocProvider(
           create: (context) => OrderCubit(),
         ),
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
           create: (context) => ProfileCubit(),
         ),
         BlocProvider(
-          create: (context) => RegisterCubit(getIt.get<Api>()),
+          create: (context) => RegisterCubit(getIt.get<AuthRepo>()),
         ),
         BlocProvider(
           create: (context) => SearchCubit(SearchRepoImple(ApiImpl(Dio()))),

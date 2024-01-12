@@ -25,6 +25,7 @@ class SearchTextField extends StatelessWidget {
     return SizedBox(
       height: 55.h,
       child: TextField(
+          onTapOutside: (event) => FocusScope.of(context).unfocus(),
           textInputAction: TextInputAction.search,
           controller: controller,
           onChanged: onChanged,

@@ -29,6 +29,7 @@ class AuthFormField extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: TextFormField(
+          onTapOutside: (event) => FocusScope.of(context).unfocus(),
           readOnly: isReadOnly ?? false,
           textAlign: TextAlign.right,
           validator: validator,

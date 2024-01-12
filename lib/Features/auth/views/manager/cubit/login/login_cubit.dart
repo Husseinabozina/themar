@@ -3,14 +3,16 @@ import 'package:meta/meta.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:regexpattern/regexpattern.dart';
 import 'package:go_router/go_router.dart';
+import 'package:themar_app/Features/auth/data/models/login_request_body.dart';
+import 'package:themar_app/Features/auth/data/repos/auth_repo.dart';
 import 'package:themar_app/core/Networking/api/api.dart';
 import 'package:themar_app/core/Networking/api/api_const.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.api) : super(LoginInitial());
-  Api api;
+  LoginCubit(this.authRepo) : super(LoginInitial());
+  AuthRepo authRepo;
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -38,18 +40,21 @@ class LoginCubit extends Cubit<LoginState> {
     BuildContext context,
   ) async {
     if (loginFormKey.currentState!.validate()) {
-      await api.post(url: ApiConstants.loginUrl, data: {
-        "phone": phoneNumberController.text,
-        "password": passwordController.text,
-        "device_token": 'test',
-        "type": type,
-        "user_type": userType,
+      emit(LoginLoading());
+      final result = await authRepo.login(loginRequestBody(
+          deviceToken: 'test',
+          password: passwordController.text,
+          phone: phoneNumberController.text,
+          type: 'android',
+          userType: 'client'));
+      result.when(success: (loginresponse) {
+        emit(LoginSuccess());
+        GoRouter.of(context).push(AppRoutes.homeScreen);
+      }, failure: (error) {
+        emit(LoginFailure(message: error.apiErrorModel.message));
       });
-      emit(LoginSuccess());
+
       // disposeAndClear();
-      GoRouter.of(context).push(AppRoutes.homeScreen);
-    } else {
-      emit(LoginFailure());
     }
   }
 

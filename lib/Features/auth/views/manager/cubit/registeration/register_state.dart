@@ -12,6 +12,9 @@ class RegisterLoading extends RegisterState {}
 
 class RegisterSuccess extends RegisterState {}
 
-class RegisterFailure extends RegisterState {}
+class RegisterFailure extends RegisterState {
+  String? message;
+  RegisterFailure({this.message});
+}
 
 class SelectCity extends RegisterState {}

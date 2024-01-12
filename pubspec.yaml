@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  meta: ^1.11.0
   auto_size_text: ^3.0.0
   cached_network_image: ^3.3.1
   carousel_slider: ^4.2.1
@@ -40,6 +41,7 @@ dependencies:
   flutter_google_places: ^0.3.0
   flutter_svg: null
   flutter_typeahead: ^5.0.1
+  fluttertoast: ^8.2.4
   freezed: null
   freezed_annotation: null
   geocoding: ^2.1.1
@@ -51,8 +53,8 @@ dependencies:
   http: null
   image_picker: ^1.0.4
   intl: ^0.19.0
-  json_annotation: 
-  json_serializable: null
+  json_annotation: ^4.8.1
+  json_serializable: 
   pinput: ^3.0.1
   pretty_dio_logger: ^1.3.1
   provider: ^6.1.1
