@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:themar_app/Features/Profile/data/order.dart';
+import 'package:themar_app/Features/Profile/data/models/order.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/Features/orders/presentation/manager/cubit/order_cubit.dart';
 import 'package:themar_app/Features/orders/presentation/views/components/order_card.dart';

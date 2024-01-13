@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/Profile/data/order.dart';
+import 'package:themar_app/Features/Profile/data/models/order.dart';
 import 'package:themar_app/Features/orders/presentation/views/components/order_card.dart';
 import 'package:themar_app/core/config/App_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:themar_app/Features/Profile/data/order.dart';
+import 'package:themar_app/Features/Profile/data/models/order.dart';
 import 'package:themar_app/Features/Profile/presentation/view/components/space.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/home/delivery_home_page_appbar.dart';
 import 'package:themar_app/Features/home/presentation/views/widgets/search_textField.dart';
