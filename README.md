@@ -1,16 +1,12 @@
 # themar_app
 
-A new Flutter project.
+A new e-commerce Flutter project . 
 
-## Getting Started
+![1](https://github.com/Husseinabozina/themar/assets/55768857/a3ecf828-0116-4cf2-9850-0740519087ff)
+![2](https://github.com/Husseinabozina/themar/assets/55768857/3322dbac-3af8-4d83-adad-de4b3b861e26)
+![3](https://github.com/Husseinabozina/themar/assets/55768857/2f15ddda-118d-472a-98c5-0d558296b221)
+![4](https://github.com/Husseinabozina/themar/assets/55768857/b09a06e1-c4f7-4957-a4e1-8c22019b5f95)
+![5](https://github.com/Husseinabozina/themar/assets/55768857/5226e9eb-c18d-4ed5-8e11-692820bf108d)
+![6](https://github.com/Husseinabozina/themar/assets/55768857/386b5f46-dc4a-4f52-8628-aa532a37b113)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
