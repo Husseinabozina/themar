@@ -54,19 +54,18 @@ A new e-commerce Flutter project .
 </p>
 <p float="left">
  <img src="https://github.com/Husseinabozina/themar/assets/55768857/a3ecf828-0116-4cf2-9850-0740519087ff" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/1cde5c679967f75e26e53560a374ead1a65b6ccc/screenshots/homeupd2.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/e3c1e25bc5f72b7abf378f1daebedd884cd757df/screenshots/categories.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/1cde5c679967f75e26e53560a374ead1a65b6ccc/screenshots/profile.jpg" width="180"/>
+ <img src="https://github.com/Husseinabozina/themar/assets/55768857/3322dbac-3af8-4d83-adad-de4b3b861e26" width="180"/>
+ <img src="https://github.com/Husseinabozina/themar/assets/55768857/2f15ddda-118d-472a-98c5-0d558296b221" width="180"/>
+ <img src="https://github.com/Husseinabozina/themar/assets/55768857/b09a06e1-c4f7-4957-a4e1-8c22019b5f95" width="180"/>
+ <img src="https://github.com/Husseinabozina/themar/assets/55768857/5226e9eb-c18d-4ed5-8e11-692820bf108d" width="180"/>
+ <img src="https://github.com/Husseinabozina/themar/assets/55768857/386b5f46-dc4a-4f52-8628-aa532a37b113" width="180"/>
+ <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/1cde5c679967f75e26e53560a374ead1a65b6ccc/screenshots/homeupd2.jpg" width="180"/>
+ <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/e3c1e25bc5f72b7abf378f1daebedd884cd757df/screenshots/categories.jpg" width="180"/>
+ <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/1cde5c679967f75e26e53560a374ead1a65b6ccc/screenshots/profile.jpg" width="180"/>
  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/cac9447485e531c6bd9982e36a7194a39435540e/screenshots/intro.jpg" width="180"/> 
  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/b02c61118bd41ef9a4fb08dc7ac9a98466844903/screenshots/mealdetails2.jpg" width="180"/>
  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/5ce0e278b1426f8b49bc51c0f75a24bcfc441c03/screenshots/more.jpg" width="180"/>
  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/3617d16f57339b8af23d45d15a681903c08ee88e/screenshots/contactscr.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/25e1b1610d13a610deb75a3f2552d4fe31db49a0/screenshots/mealsbycat.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/6fba63ae361814d9a76491e2fe5cf3eca53abd99/screenshots/signup.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/25e1b1610d13a610deb75a3f2552d4fe31db49a0/screenshots/search.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/5ce0e278b1426f8b49bc51c0f75a24bcfc441c03/screenshots/offers.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/90fa0050dfa4fe6819ca3058c4ebc6defe1b16cf/screenshots/ads.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/1cde5c679967f75e26e53560a374ead1a65b6ccc/screenshots/packages.jpg" width="180"/>
-  <img src="https://github.com/mo7amedaliEbaid/nibbles-ecommerce-complex-ui/blob/6442a79d60c09586d6ab9031a00458584971fb06/screenshots/searchnotfound.jpg" width="180"/>
+ 
 
 
